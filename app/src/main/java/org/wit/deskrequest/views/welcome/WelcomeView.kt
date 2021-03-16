@@ -13,5 +13,7 @@ class WelcomeView : BaseView() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
+
+        //presenter = initPresenter(WelcomePresenter(this)) as WelcomePresenter
     }
 }

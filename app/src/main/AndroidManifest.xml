@@ -12,7 +12,7 @@
 
      <activity
         android:name=".views.welcome.WelcomeView"
-        android:label="@string/title_activity_splash">
+        android:label="@string/title_activity_welcome">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
