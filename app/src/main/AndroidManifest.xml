@@ -3,6 +3,7 @@
     package="org.wit.deskrequest">
 
   <application
+      android:name=".main.MainApp"
       android:allowBackup="true"
       android:icon="@mipmap/ic_launcher"
       android:label="@string/app_name"
@@ -13,16 +14,14 @@
      <activity
         android:name=".views.welcome.WelcomeView"
         android:label="@string/title_activity_welcome">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
     </activity>
+      <activity
+          android:name=".views.options.OptionsView"
+          android:label="@string/title_activity_welcome">
+      </activity>
     <activity android:name=".activities.SplashActivity" >
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>

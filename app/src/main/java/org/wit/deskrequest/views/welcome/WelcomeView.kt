@@ -1,10 +1,11 @@
 package org.wit.deskrequest.views.welcome
 
 import android.os.Bundle
-import android.view.View
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.wit.deskrequest.R
 import org.wit.deskrequest.views.BaseView
+import kotlinx.android.synthetic.main.activity_book_options.*
+import kotlinx.android.synthetic.main.activity_welcome.*
+
 
 class WelcomeView : BaseView() {
 
@@ -14,6 +15,10 @@ class WelcomeView : BaseView() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
 
-        //presenter = initPresenter(WelcomePresenter(this)) as WelcomePresenter
+        presenter = initPresenter(WelcomePresenter(this)) as WelcomePresenter
+
+        buttonContinue.setOnClickListener{
+            presenter.showOptions()
+        }
     }
 }

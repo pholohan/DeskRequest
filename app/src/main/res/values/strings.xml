@@ -2,8 +2,11 @@
   <string name="app_name">Desk Request</string>
   <string name="title_activity_splash">SplashActivity</string>
   <string name="title_activity_welcome">Desk Request - Welcome</string>
+  <string name="title_activity_options">Desk Request - Choose Option</string>
   <string name="activity_welcome_continue">Continue -></string>
   <string name="activity_welcome_text">Choose a Date</string>
+  <string name="activity_book_options_conf">Book Conference/Meeting Room</string>
+  <string name="activity_book_options_desk">Book a Desk</string>
   <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.

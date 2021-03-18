@@ -5,10 +5,11 @@ import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import org.jetbrains.anko.AnkoLogger
+import org.wit.deskrequest.views.options.OptionsView
 import org.wit.deskrequest.views.welcome.WelcomeView
 
 enum class VIEW {
-    WELCOME
+    WELCOME, OPTIONS
 }
 
 open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
@@ -19,6 +20,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
         var intent = Intent(this, WelcomeView::class.java)
         when (view) {
             VIEW.WELCOME -> intent = Intent(this, WelcomeView::class.java)
+            VIEW.OPTIONS -> intent = Intent(this, OptionsView::class.java)
         }
         if (key != "") {
             intent.putExtra(key, value)
