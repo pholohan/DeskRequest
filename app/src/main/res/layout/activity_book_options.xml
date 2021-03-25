@@ -4,29 +4,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
 
   <Button
       android:id="@+id/buttonConf"
-      android:layout_width="406dp"
-      android:layout_height="364dp"
-      android:background="@color/white"
+      android:layout_width="match_parent"
+      android:layout_height="210dp"
+      android:layout_gravity="center_horizontal"
+      android:layout_margin="50dp"
+      android:layout_marginTop="200dp"
+      android:background="@android:color/background_light"
+      android:drawableEnd="@drawable/ic_chevron"
+      android:drawablePadding="30dp"
+      android:minWidth="0dp"
+      android:scaleType="center"
       android:text="@string/activity_book_options_conf"
-      android:textSize="30sp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.4"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      android:textColor="#DE000000"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:layout_editor_absoluteX="53dp" />
 
   <Button
       android:id="@+id/buttonOffice"
-      android:layout_width="406dp"
-      android:layout_height="364dp"
-      android:background="@color/white"
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      android:layout_gravity="center_horizontal"
+      android:layout_margin="50dp"
+      android:layout_marginTop="24dp"
+      android:background="@android:color/background_light"
+      android:drawableEnd="@drawable/ic_chevron"
+      android:drawablePadding="30dp"
+      android:minWidth="0dp"
+      android:scaleType="center"
       android:text="@string/activity_book_options_desk"
-      android:textSize="30sp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/buttonConf" />
+      android:textColor="#DE000000"
+      app:layout_constraintTop_toBottomOf="@id/buttonConf"
+      tools:layout_editor_absoluteX="50dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

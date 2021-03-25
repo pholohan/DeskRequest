@@ -9,7 +9,7 @@
       android:label="@string/app_name"
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
-      android:theme="@style/Theme.DeskRequest">
+      android:theme="@style/Theme.AppCompat.Light">
 
      <activity
         android:name=".views.welcome.WelcomeView"
@@ -17,7 +17,7 @@
     </activity>
       <activity
           android:name=".views.options.OptionsView"
-          android:label="@string/title_activity_welcome">
+          android:label="@string/title_activity_options">
       </activity>
     <activity android:name=".activities.SplashActivity" >
       <intent-filter>
