@@ -16,6 +16,8 @@ class WelcomeView : BaseView() {
         setContentView(R.layout.activity_welcome)
 
         presenter = initPresenter(WelcomePresenter(this)) as WelcomePresenter
+        setSupportActionBar(toolbar)
+        super.init(toolbar, true);
 
         buttonContinue.setOnClickListener{
             presenter.showOptions()

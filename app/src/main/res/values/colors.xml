@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="colorPrimary">#03A9F4</color>
-  <color name="colorPrimaryDark">#0288D1</color>
-  <color name="colorAccent">#00BCD4</color>
-  <color name="windowBackground">#fff</color>
-  <color name="navigationBarColor">#0288D1</color>
-  <color name="statusBarColor">#0288D1</color>
-  <color name="textColorPrimary">#fff4f4f4</color>
-  <color name="purple_500">#9C27B0</color>
-  <color name="purple_700">#7B1FA2</color>
-
-  <color name="teal_200">#80CBC4</color>
-  <color name="teal_700">#00796B</color>
-
-  <color name="purple_200">#CE93D8</color>
-
-  <color name="white">#FFFFFF</color>
-  <color name="black">#000000</color>
-
+  <color name="colorPrimary">#000000</color>
+  <color name="colorPrimaryDark">#000000</color>
+  <color name="colorAccent">#4c90af</color>
+  <color name="colorText">#FFFFFF</color>
 </resources>

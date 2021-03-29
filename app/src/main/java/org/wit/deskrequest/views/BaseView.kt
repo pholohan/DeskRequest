@@ -34,7 +34,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
     }
 
     fun init(toolbar: Toolbar, upEnabled: Boolean) {
-        toolbar.title = title
+        //toolbar.title = title
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(upEnabled)
         //val user = FirebaseAuth.getInstance().currentUser
