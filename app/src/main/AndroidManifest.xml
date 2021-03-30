@@ -18,6 +18,9 @@
       <activity
           android:name=".views.options.OptionsView"
           android:label="@string/title_activity_options">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".views.welcome.WelcomeView" />
       </activity>
     <activity android:name=".activities.SplashActivity" >
       <intent-filter>
