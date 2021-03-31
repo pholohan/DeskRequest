@@ -4,4 +4,6 @@
   <color name="colorPrimaryDark">#000000</color>
   <color name="colorAccent">#4c90af</color>
   <color name="colorText">#FFFFFF</color>
+  <color name="colorBotNav">#FFFFFF</color>
+  <color name="colorBotNavText">#808080</color>
 </resources>

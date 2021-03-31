@@ -7,9 +7,10 @@ import androidx.appcompat.widget.Toolbar
 import org.jetbrains.anko.AnkoLogger
 import org.wit.deskrequest.views.options.OptionsView
 import org.wit.deskrequest.views.welcome.WelcomeView
+import org.wit.deskrequest.views.roomlist.RoomListView
 
 enum class VIEW {
-    WELCOME, OPTIONS
+    WELCOME, OPTIONS, LIST
 }
 
 open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
@@ -21,6 +22,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
         when (view) {
             VIEW.WELCOME -> intent = Intent(this, WelcomeView::class.java)
             VIEW.OPTIONS -> intent = Intent(this, OptionsView::class.java)
+            VIEW.LIST -> intent = Intent(this, RoomListView::class.java)
         }
         if (key != "") {
             intent.putExtra(key, value)
