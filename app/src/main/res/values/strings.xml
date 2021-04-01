@@ -7,6 +7,7 @@
   <string name="activity_welcome_text">Choose a Date</string>
   <string name="activity_book_options_conf">Book Conference/Meeting Room</string>
   <string name="activity_book_options_desk">Book a Desk</string>
+  <string name="activity_room_list">Select a Room</string>
   <string name="menu_bookdesk">Desk</string>
   <string name="menu_room">Room</string>
   <string name="menu_date">Date</string>

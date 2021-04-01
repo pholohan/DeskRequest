@@ -5,9 +5,12 @@ import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import org.jetbrains.anko.AnkoLogger
+import org.wit.deskrequest.models.RoomModel
 import org.wit.deskrequest.views.options.OptionsView
+import org.wit.deskrequest.views.roomlist.RoomListPresenter
 import org.wit.deskrequest.views.welcome.WelcomeView
 import org.wit.deskrequest.views.roomlist.RoomListView
+import org.wit.deskrequest.views.welcome.WelcomePresenter
 
 enum class VIEW {
     WELCOME, OPTIONS, LIST
@@ -36,7 +39,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
     }
 
     fun init(toolbar: Toolbar, upEnabled: Boolean) {
-        //toolbar.title = title
+        toolbar.title = title
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(upEnabled)
         //val user = FirebaseAuth.getInstance().currentUser
@@ -62,4 +65,5 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
     //    basePresenter?.doRequestPermissionsResult(requestCode, permissions, grantResults)
     //}
 
+    open fun showRooms(rooms: List<RoomModel>) {}
 }

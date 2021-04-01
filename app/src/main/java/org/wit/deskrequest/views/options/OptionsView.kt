@@ -16,5 +16,17 @@ class OptionsView : BaseView() {
 
     setSupportActionBar(toolbarBook)
     super.init(toolbarBook, true);
+
+    presenter = initPresenter(OptionsPresenter(this)) as OptionsPresenter
+
+    buttonConf.setOnClickListener{
+      presenter.showRoomsList()
+    }
+
+    buttonOffice.setOnClickListener{
+      presenter.showRoomsList()
+    }
+
   }
+
 }
