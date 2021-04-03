@@ -25,6 +25,9 @@
     <activity
         android:name=".views.roomlist.RoomListView"
         android:label="@string/activity_room_list">
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".views.options.OptionsView" />
     </activity>
     <activity android:name=".activities.SplashActivity" >
       <intent-filter>

@@ -16,24 +16,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:textColor="@color/colorPrimary"
         android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/roomType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
         android:layout_below="@id/roomName" />
 
     <TextView
         android:id="@+id/roomLoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
         android:layout_below="@id/roomType" />
 
     <TextView
         android:id="@+id/roomCap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
         android:layout_below="@id/roomLoc"/>
 
   </RelativeLayout>

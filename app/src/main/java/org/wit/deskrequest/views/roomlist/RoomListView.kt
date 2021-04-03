@@ -16,8 +16,8 @@ class RoomListView : BaseView(), RoomListener {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_room_list)
 
-    setSupportActionBar(toolbar)
-    super.init(toolbar, true);
+    setSupportActionBar(toolbarList)
+    super.init(toolbarList, true);
 
     presenter = initPresenter(RoomListPresenter(this)) as RoomListPresenter
     val layoutManager = LinearLayoutManager(this)
@@ -28,5 +28,10 @@ class RoomListView : BaseView(), RoomListener {
 
   override fun onRoomClick(room: RoomModel) {
     presenter.viewRoomDetails()
+  }
+
+  override fun showRooms(rooms: List<RoomModel>) {
+    recyclerView.adapter = RoomAdapter(rooms, this)
+    recyclerView.adapter?.notifyDataSetChanged()
   }
 }

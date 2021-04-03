@@ -39,9 +39,9 @@ class RoomAdapter constructor(
 
     fun bind(room: RoomModel, listener: RoomListener) {
       itemView.roomName.text = room.roomName
-      itemView.roomType.text = room.roomType
-      itemView.roomLoc.text = room.location
-      itemView.roomCap.text = room.capacity
+      itemView.roomType.text = ("Type:" +room.roomType)
+      itemView.roomLoc.text = ("Location:" +room.location)
+      itemView.roomCap.text = ("Capacity:" +room.capacity)
       itemView.setOnClickListener {
         listener.onRoomClick(room)
       }

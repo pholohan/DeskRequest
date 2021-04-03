@@ -27,6 +27,10 @@ class OptionsView : BaseView() {
       presenter.showRoomsList()
     }
 
+    buttonAll.setOnClickListener{
+      presenter.showRoomsList()
+    }
+
   }
 
 }

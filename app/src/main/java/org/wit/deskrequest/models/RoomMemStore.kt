@@ -20,6 +20,11 @@ class RoomMemStore : RoomStore, AnkoLogger {
     rooms.add(RoomModel(1002, "QA", "Office", "33/35", "8"))
     rooms.add(RoomModel(1003, "Reginald Room", "Meeting", "301", "50"))
     rooms.add(RoomModel(1004, "Tech Support", "Office", "27/35", "15"))
+    rooms.add(RoomModel(1005, "QC", "Office", "301", "10"))
+    rooms.add(RoomModel(1006, "Dunhill Room", "Meeting", "27/35", "20"))
+    rooms.add(RoomModel(1007, "R&D Devices", "Office", "301", "8"))
+    rooms.add(RoomModel(1008, "Tramore Room", "Meeting", "301", "50"))
+    rooms.add(RoomModel(1009, "Pharm Dev", "Office", "27/35", "15"))
     return rooms
   }
 
@@ -34,9 +39,14 @@ class RoomMemStore : RoomStore, AnkoLogger {
    return favRooms
   }
 
-  override fun filterRooms(name: String): List<RoomModel> {
-    val filterRooms: List<RoomModel> = rooms.filter { p -> p.roomName == name }
-    return filterRooms
+  override fun filterOffice(name: String): List<RoomModel> {
+    val filterOffices: List<RoomModel> = rooms.filter { p -> p.roomType == "Office" }
+    return filterOffices
+  }
+
+  override fun filterMeetConf(name: String): List<RoomModel> {
+    val filterMeetConfs: List<RoomModel> = rooms.filter { p -> p.roomType == "Meeting" || p.roomType == "Conf" }
+    return filterMeetConfs
   }
 
   override fun update(room: RoomModel) {
