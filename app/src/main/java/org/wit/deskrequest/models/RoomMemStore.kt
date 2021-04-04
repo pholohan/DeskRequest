@@ -39,13 +39,33 @@ class RoomMemStore : RoomStore, AnkoLogger {
    return favRooms
   }
 
-  override fun filterOffice(name: String): List<RoomModel> {
+  override fun filterOffice(): List<RoomModel> {
+    rooms.add(RoomModel(1000, "IT", "Office", "301", "10"))
+    rooms.add(RoomModel(1001, "Bunmahon Room", "Conf", "27/35", "20"))
+    rooms.add(RoomModel(1002, "QA", "Office", "33/35", "8"))
+    rooms.add(RoomModel(1003, "Reginald Room", "Meeting", "301", "50"))
+    rooms.add(RoomModel(1004, "Tech Support", "Office", "27/35", "15"))
+    rooms.add(RoomModel(1005, "QC", "Office", "301", "10"))
+    rooms.add(RoomModel(1006, "Dunhill Room", "Meeting", "27/35", "20"))
+    rooms.add(RoomModel(1007, "R&D Devices", "Office", "301", "8"))
+    rooms.add(RoomModel(1008, "Tramore Room", "Meeting", "301", "50"))
+    rooms.add(RoomModel(1009, "Pharm Dev", "Office", "27/35", "15"))
     val filterOffices: List<RoomModel> = rooms.filter { p -> p.roomType == "Office" }
     return filterOffices
   }
 
-  override fun filterMeetConf(name: String): List<RoomModel> {
-    val filterMeetConfs: List<RoomModel> = rooms.filter { p -> p.roomType == "Meeting" || p.roomType == "Conf" }
+  override fun filterMeetConf(): List<RoomModel> {
+    rooms.add(RoomModel(1000, "IT", "Office", "301", "10"))
+    rooms.add(RoomModel(1001, "Bunmahon Room", "Conf", "27/35", "20"))
+    rooms.add(RoomModel(1002, "QA", "Office", "33/35", "8"))
+    rooms.add(RoomModel(1003, "Reginald Room", "Meeting", "301", "50"))
+    rooms.add(RoomModel(1004, "Tech Support", "Office", "27/35", "15"))
+    rooms.add(RoomModel(1005, "QC", "Office", "301", "10"))
+    rooms.add(RoomModel(1006, "Dunhill Room", "Meeting", "27/35", "20"))
+    rooms.add(RoomModel(1007, "R&D Devices", "Office", "301", "8"))
+    rooms.add(RoomModel(1008, "Tramore Room", "Meeting", "301", "50"))
+    rooms.add(RoomModel(1009, "Pharm Dev", "Office", "27/35", "15"))
+    val filterMeetConfs: List<RoomModel> = rooms.filter { p -> p.roomType == "Meeting" || p.roomType == "Conf"}
     return filterMeetConfs
   }
 

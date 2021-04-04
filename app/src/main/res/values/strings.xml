@@ -9,6 +9,8 @@
   <string name="activity_book_options_desk">View Offices</string>
   <string name="activity_book_options_all">Show All</string>
   <string name="activity_room_list">Select a Room</string>
+  <string name="activity_office_list">Available Offices</string>
+  <string name="activity_meetconf_list">Meeting/Conference Rooms</string>
   <string name="menu_bookdesk">Desk</string>
   <string name="menu_room">Room</string>
   <string name="menu_date">Date</string>

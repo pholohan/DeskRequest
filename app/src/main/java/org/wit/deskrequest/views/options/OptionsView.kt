@@ -20,11 +20,11 @@ class OptionsView : BaseView() {
     presenter = initPresenter(OptionsPresenter(this)) as OptionsPresenter
 
     buttonConf.setOnClickListener{
-      presenter.showRoomsList()
+      presenter.showMeetConf()
     }
 
     buttonOffice.setOnClickListener{
-      presenter.showRoomsList()
+      presenter.showOffice()
     }
 
     buttonAll.setOnClickListener{

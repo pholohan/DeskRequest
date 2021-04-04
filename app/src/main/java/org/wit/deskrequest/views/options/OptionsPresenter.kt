@@ -7,11 +7,11 @@ import org.wit.deskrequest.views.VIEW
 class OptionsPresenter(view: BaseView) : BasePresenter(view){
 
   fun showMeetConf() {
-    view?.navigateTo(VIEW.LIST)
+    view?.navigateTo(VIEW.MEETCONF)
   }
 
   fun showOffice() {
-    view?.navigateTo(VIEW.LIST)
+    view?.navigateTo(VIEW.OFFICE)
   }
 
   fun showRoomsList() {
