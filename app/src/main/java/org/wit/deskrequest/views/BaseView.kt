@@ -5,11 +5,17 @@ import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import org.jetbrains.anko.AnkoLogger
+import org.wit.deskrequest.models.RoomModel
+import org.wit.deskrequest.views.meetconflist.MeetConfListView
+import org.wit.deskrequest.views.officelist.OfficeListView
 import org.wit.deskrequest.views.options.OptionsView
+import org.wit.deskrequest.views.roomlist.RoomListPresenter
 import org.wit.deskrequest.views.welcome.WelcomeView
+import org.wit.deskrequest.views.roomlist.RoomListView
+import org.wit.deskrequest.views.welcome.WelcomePresenter
 
 enum class VIEW {
-    WELCOME, OPTIONS
+    WELCOME, OPTIONS, LIST, MEETCONF, OFFICE
 }
 
 open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
@@ -21,6 +27,9 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
         when (view) {
             VIEW.WELCOME -> intent = Intent(this, WelcomeView::class.java)
             VIEW.OPTIONS -> intent = Intent(this, OptionsView::class.java)
+            VIEW.LIST -> intent = Intent(this, RoomListView::class.java)
+            VIEW.MEETCONF -> intent = Intent(this, MeetConfListView::class.java)
+            VIEW.OFFICE -> intent = Intent(this, OfficeListView::class.java)
         }
         if (key != "") {
             intent.putExtra(key, value)
@@ -60,4 +69,6 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
     //    basePresenter?.doRequestPermissionsResult(requestCode, permissions, grantResults)
     //}
 
+    open fun showRooms(rooms: List<RoomModel>) {}
+    open fun showOffices(rooms: List<RoomModel>) {}
 }
