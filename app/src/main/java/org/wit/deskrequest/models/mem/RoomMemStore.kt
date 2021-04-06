@@ -1,7 +1,9 @@
-package org.wit.deskrequest.models
+package org.wit.deskrequest.models.mem
 
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import org.wit.deskrequest.models.RoomModel
+import org.wit.deskrequest.models.RoomStore
 
 
 var lastId = 0L
