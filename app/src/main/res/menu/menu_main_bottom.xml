@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+      android:id="@+id/item_desk"
+      android:icon="@drawable/ic_baseline_chair_24"
+      android:title="@string/menu_bookdesk"
+      app:showAsAction="never"/>
+
+  <item
+      android:id="@+id/item_room"
+      android:icon="@drawable/ic_baseline_meeting_room_24"
+      android:title="@string/menu_room"
+      android:tint="@color/colorText"
+      app:showAsAction="never"/>
+
+  <item
+      android:id="@+id/item_date"
+      android:icon="@drawable/ic_baseline_date_range_24"
+      android:title="@string/menu_date"
+      app:showAsAction="never"/>
+
+  <item
+      android:id="@+id/item_settings"
+      android:icon="@drawable/ic_baseline_person_24"
+      android:title="@string/menu_settings"
+      android:visible="true"
+      app:showAsAction="never" />
+
+  <item
+      android:id="@+id/item_logout"
+      android:title="@string/menu_logout"
+      android:visible="true"
+      android:icon="@drawable/ic_baseline_exit_to_app_24"
+      app:showAsAction="never" />
+</menu>
