@@ -5,6 +5,7 @@ import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import org.jetbrains.anko.AnkoLogger
+import org.wit.deskrequest.models.Desk
 import org.wit.deskrequest.models.RoomModel
 import org.wit.deskrequest.views.meetconflist.MeetConfListView
 import org.wit.deskrequest.views.officelist.OfficeListView
@@ -70,5 +71,5 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
     //}
 
     open fun showRooms(rooms: List<RoomModel>) {}
-    open fun showOffices(rooms: List<RoomModel>) {}
+    open fun showDesks(desks: List<Desk>) {}
 }
