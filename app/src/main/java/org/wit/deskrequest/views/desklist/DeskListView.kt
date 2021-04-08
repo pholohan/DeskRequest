@@ -24,7 +24,7 @@ class DeskListView : BaseView(), DeskListener {
     presenter = initPresenter(DeskListPresenter(this)) as DeskListPresenter
     val layoutManager = LinearLayoutManager(this)
     recyclerView.layoutManager = layoutManager
-    presenter.loadMeetConf()
+    presenter.loadDesks()
 
   }
 

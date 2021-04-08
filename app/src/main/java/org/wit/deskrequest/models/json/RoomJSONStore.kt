@@ -8,6 +8,7 @@ import org.jetbrains.anko.AnkoLogger
 import org.wit.deskrequest.helpers.exists
 import org.wit.deskrequest.helpers.read
 import org.wit.deskrequest.helpers.write
+import org.wit.deskrequest.models.Desk
 import org.wit.deskrequest.models.RoomModel
 import org.wit.deskrequest.models.RoomStore
 import java.util.*
@@ -24,6 +25,7 @@ class RoomJSONStore : RoomStore, AnkoLogger {
 
     val context: Context
     var rooms = mutableListOf<RoomModel>()
+    var desks = mutableListOf<Desk>()
 
     constructor (context: Context) {
         this.context = context
@@ -36,6 +38,10 @@ class RoomJSONStore : RoomStore, AnkoLogger {
         return rooms
     }
 
+    override fun findAllDesks(): MutableList<Desk> {
+        return desks
+    }
+
     override fun findFavourites(): List<RoomModel> {
         val favRooms: List<RoomModel> = rooms.filter { p -> p.roombooked == true }
         return favRooms
@@ -44,6 +50,12 @@ class RoomJSONStore : RoomStore, AnkoLogger {
     override fun filterOffice(): List<RoomModel> {
         val filterOffices: List<RoomModel> = rooms.filter { p -> p.roomType == "Office" }
         return filterOffices
+    }
+
+    override fun filterDesks(): List<Desk> {
+        val filterRooms: List<RoomModel> = rooms.filter { p -> p.roomType == "Office" }
+        val filterDesks: List<Desk> = desks.filter { p -> p.deskid.equals(2001)}
+        return filterDesks
     }
 
     override fun filterMeetConf(): List<RoomModel> {

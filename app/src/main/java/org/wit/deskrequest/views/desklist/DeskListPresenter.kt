@@ -12,12 +12,12 @@ class DeskListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
   fun viewMeetConfDetails() {
   }
 
-  fun loadMeetConf() {
+  fun loadDesks() {
     doAsync {
-      val rooms = app.rooms.filterMeetConf()
-      info("Rooms: $rooms")
+      val desks = app.rooms.findAllDesks()
+      info("Desks: $desks")
       uiThread {
-        view?.showRooms(rooms)
+        view?.showDesks(desks)
       }
     }
   }

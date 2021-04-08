@@ -6,10 +6,12 @@ import org.jetbrains.anko.info
 import org.jetbrains.anko.uiThread
 import org.wit.deskrequest.views.BasePresenter
 import org.wit.deskrequest.views.BaseView
+import org.wit.deskrequest.views.VIEW
 
 class OfficeListPresenter (view: BaseView) : BasePresenter(view), AnkoLogger {
 
-  fun viewOfficeDetails() {
+  fun viewDeskDetails() {
+    view?.navigateTo(VIEW.DESK)
   }
 
   fun loadOffices() {
