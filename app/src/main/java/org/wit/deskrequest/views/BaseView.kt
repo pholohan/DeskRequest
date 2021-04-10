@@ -5,7 +5,9 @@ import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import org.jetbrains.anko.AnkoLogger
+import org.wit.deskrequest.models.Desk
 import org.wit.deskrequest.models.RoomModel
+import org.wit.deskrequest.views.desklist.DeskListView
 import org.wit.deskrequest.views.meetconflist.MeetConfListView
 import org.wit.deskrequest.views.officelist.OfficeListView
 import org.wit.deskrequest.views.options.OptionsView
@@ -15,7 +17,7 @@ import org.wit.deskrequest.views.roomlist.RoomListView
 import org.wit.deskrequest.views.welcome.WelcomePresenter
 
 enum class VIEW {
-    WELCOME, OPTIONS, LIST, MEETCONF, OFFICE
+    WELCOME, OPTIONS, LIST, MEETCONF, OFFICE, DESK
 }
 
 open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
@@ -30,6 +32,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
             VIEW.LIST -> intent = Intent(this, RoomListView::class.java)
             VIEW.MEETCONF -> intent = Intent(this, MeetConfListView::class.java)
             VIEW.OFFICE -> intent = Intent(this, OfficeListView::class.java)
+            VIEW.DESK -> intent = Intent(this, DeskListView::class.java)
         }
         if (key != "") {
             intent.putExtra(key, value)
@@ -70,5 +73,5 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
     //}
 
     open fun showRooms(rooms: List<RoomModel>) {}
-    open fun showOffices(rooms: List<RoomModel>) {}
+    open fun showDesks(desks: List<Desk>) {}
 }
