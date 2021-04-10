@@ -43,6 +43,13 @@
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".views.options.OptionsView" />
     </activity>
+    <activity
+        android:name=".views.desklist.DeskListView"
+        android:label="@string/activity_desk_list">
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".views.officelist.OfficeListView" />
+    </activity>
     <activity android:name=".activities.SplashActivity" >
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
