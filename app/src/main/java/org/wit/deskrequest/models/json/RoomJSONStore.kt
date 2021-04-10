@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
 import org.wit.deskrequest.helpers.exists
 import org.wit.deskrequest.helpers.read
 import org.wit.deskrequest.helpers.write
@@ -52,11 +53,25 @@ class RoomJSONStore : RoomStore, AnkoLogger {
         return filterOffices
     }
 
-    override fun filterDesks(): List<Desk> {
-        val filterRooms: List<RoomModel> = rooms.filter { p -> p.roomType == "Office" }
-        val filterDesks: List<Desk> = desks.filter { p -> p.deskid.equals(2001)}
-        return filterDesks
+    //override fun filterDesks(id:Long): List<Desk> {
+    //    val filterRooms: List<RoomModel> = rooms.filter { p -> p.roomType == "Office" }
+    //    var filteredDesks: List<Desk> = arrayListOf()
+    //    filterRooms.forEach{
+    //         filteredDesks = it.desk
+    //        info("Filtered Desks: $filteredDesks")
+    //    }
+     //   return filteredDesks
+    //}
+    override fun filterDesks(id:Long): List<Desk> {
+        val filterRoom: List<RoomModel> = rooms.filter { p -> p.roomid == id }
+        var filteredDesks: List<Desk> = arrayListOf()
+        filterRoom.forEach{
+             filteredDesks = it.desk
+            info("Filtered Desks: $filteredDesks")
+        }
+       return filteredDesks
     }
+
 
     override fun filterMeetConf(): List<RoomModel> {
         val filterMeetConfs: List<RoomModel> = rooms.filter { p -> p.roomType == "Meeting" || p.roomType == "Conf"}

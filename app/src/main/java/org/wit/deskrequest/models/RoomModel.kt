@@ -10,7 +10,7 @@ data class RoomModel(var roomid: Long=0,
                      var roomType: String = "",
                      var location: String = "",
                      var capacity: String = "",
-                     var desk: List<Desk>,
+                     var desk: ArrayList<Desk>,
                      var roombooked: Boolean = false): Parcelable
 
 @Parcelize

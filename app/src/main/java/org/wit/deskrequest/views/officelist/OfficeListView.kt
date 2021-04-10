@@ -29,7 +29,7 @@ class OfficeListView : BaseView(), RoomListener {
   }
 
   override fun onRoomClick(room: RoomModel) {
-    presenter.viewDeskDetails()
+    presenter.viewDeskDetails(room)
   }
 
   override fun showRooms(rooms: List<RoomModel>) {
