@@ -50,6 +50,13 @@
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".views.officelist.OfficeListView" />
     </activity>
+    <activity
+        android:name=".views.desk.DeskView"
+        android:label="@string/activity_desk_details">
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".views.desklist.DeskListView" />
+    </activity>
     <activity android:name=".activities.SplashActivity" >
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

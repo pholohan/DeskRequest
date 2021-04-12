@@ -12,6 +12,9 @@
   <string name="activity_office_list">Available Offices</string>
   <string name="activity_meetconf_list">Meeting/Conference Rooms</string>
   <string name="activity_desk_list">Available Desks</string>
+  <string name="activity_desk_details">Desk Details</string>
+  <string name="button_book_desk">Book This Desk</string>
+  <string name="hint_desknumber">Desk Number</string>
   <string name="menu_bookdesk">Desk</string>
   <string name="menu_room">Room</string>
   <string name="menu_date">Date</string>
@@ -22,4 +25,8 @@
     values-round/strings.xml for round devices.
     -->
   <string name="hello_world">Hello Square World!</string>
+  <string name="select_pm"><![CDATA[12pm -> 4pm]]></string>
+  <string name="select_am"><![CDATA[8am -> 12pm]]></string>
+  <string name="select_half"><![CDATA[Half Day]]></string>
+  <string name="select_full"><![CDATA[Full Day]]></string>
 </resources>
