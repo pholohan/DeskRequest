@@ -63,54 +63,53 @@
           android:layout_width="match_parent"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
-          android:layout_marginTop="72dp"
+          android:layout_marginTop="64dp"
           android:autofillHints=""
           android:gravity="center_horizontal"
-          android:inputType="text"
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="Desk Information"
+          android:text="@string/activity_desk_deskdetails"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent" />
 
       <TextView
           android:id="@+id/deskNo"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
-          android:layout_marginTop="8dp"
+          android:layout_marginTop="5dp"
           android:autofillHints=""
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="Desk No"
+          android:text="@string/activity_desk_deskno"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@id/deskInfo" />
 
       <TextView
           android:id="@+id/deskNoField"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
-          android:layout_marginTop="8dp"
+          android:layout_marginTop="5dp"
           android:autofillHints=""
           android:hint="Display Desk No"
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toEndOf="@id/deskNo"
           app:layout_constraintTop_toBottomOf="@id/deskInfo" />
 
       <TextView
           android:id="@+id/chairType"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -118,15 +117,15 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="Chair Type"
+          android:text="@string/activity_chair_type"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25dp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@id/deskNo" />
 
       <TextView
           android:id="@+id/chairSize"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -134,15 +133,15 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="Chair Size"
+          android:text="@string/activity_chair_size"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toEndOf="@id/chairType"
           app:layout_constraintTop_toBottomOf="@id/deskNo" />
 
       <TextView
           android:id="@+id/chairTypeField"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -152,13 +151,13 @@
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@id/chairType" />
 
       <TextView
           android:id="@+id/chairSizeField"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -168,13 +167,13 @@
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toEndOf="@id/chairType"
           app:layout_constraintTop_toBottomOf="@id/chairSize" />
 
       <TextView
           android:id="@+id/compOS"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -183,15 +182,15 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="Computer OS"
+          android:text="@string/activity_comp_os"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@id/chairSizeField" />
 
       <TextView
           android:id="@+id/compOSField"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -202,13 +201,13 @@
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toEndOf="@id/compOS"
           app:layout_constraintTop_toBottomOf="@id/chairSizeField" />
 
       <TextView
           android:id="@+id/monSize"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -217,15 +216,15 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="Monitor Size"
+          android:text="@string/activity_mon_size"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@id/compOS" />
 
       <TextView
           android:id="@+id/monRes"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -234,15 +233,15 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="Monitor Resolution"
+          android:text="@string/activity_mon_res"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toEndOf="@id/monSize"
           app:layout_constraintTop_toBottomOf="@id/compOS" />
 
       <TextView
           android:id="@+id/monSizeField"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -253,13 +252,13 @@
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@id/monSize" />
 
       <TextView
           android:id="@+id/monResField"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -270,13 +269,13 @@
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toEndOf="@id/monSize"
           app:layout_constraintTop_toBottomOf="@id/monRes" />
 
       <TextView
           android:id="@+id/dockModel"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -285,15 +284,15 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="Docking Station"
+          android:text="@string/activity_doc_model"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@id/monResField" />
 
       <TextView
-          android:id="@+id/Field"
-          android:layout_width="248dp"
+          android:id="@+id/docModelField"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -304,13 +303,13 @@
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toEndOf="@id/dockModel"
           app:layout_constraintTop_toBottomOf="@id/monResField" />
 
       <TextView
           android:id="@+id/phNo"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -319,15 +318,15 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="Phone No"
+          android:text="@string/activity_phone_number"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@id/dockModel" />
 
       <TextView
           android:id="@+id/directDial"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -336,15 +335,15 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="Direct Dial"
+          android:text="@string/activity_phone_dd"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toEndOf="@id/phNo"
           app:layout_constraintTop_toBottomOf="@id/dockModel" />
 
       <TextView
           android:id="@+id/phNoField"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -355,13 +354,13 @@
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@id/phNo" />
 
       <TextView
           android:id="@+id/directDialField"
-          android:layout_width="248dp"
+          android:layout_width="200dp"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
@@ -372,7 +371,7 @@
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorPrimaryDark"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toEndOf="@id/phNo"
           app:layout_constraintTop_toBottomOf="@id/directDial" />
 
@@ -383,7 +382,7 @@
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
           android:orientation="vertical"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintStart_toEndOf="@id/phNo"
           app:layout_constraintTop_toBottomOf="@id/phNoField">
         <RadioButton
@@ -391,12 +390,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/select_am"
-            android:textSize="28sp"/>
+            android:textSize="25sp"/>
         <RadioButton android:id="@+id/duration_pm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/select_pm"
-            android:textSize="28sp"/>
+            android:textSize="25sp"/>
       </RadioGroup>
 
       <RadioGroup
@@ -405,19 +404,19 @@
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
           android:orientation="vertical"
-          android:textSize="28sp"
+          android:textSize="25sp"
           app:layout_constraintTop_toBottomOf="@id/phNoField">
         <RadioButton
             android:id="@+id/duration_full"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/select_full"
-            android:textSize="28sp"/>
+            android:textSize="25sp"/>
         <RadioButton android:id="@+id/duration_half"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/select_half"
-            android:textSize="28sp"/>
+            android:textSize="25sp"/>
       </RadioGroup>
 
       <ImageView

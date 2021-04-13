@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.card_desk.view.*
 import kotlinx.android.synthetic.main.card_room.view.*
 import org.wit.deskrequest.R
 import org.wit.deskrequest.models.Desk
+import org.wit.deskrequest.models.RoomModel
 
 interface DeskListener {
   fun onDeskClick(desk: Desk)

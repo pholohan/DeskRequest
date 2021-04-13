@@ -20,13 +20,18 @@
   <string name="menu_date">Date</string>
   <string name="menu_settings">Settings</string>
   <string name="menu_logout">Logout</string>
-  <!--
-    This string is used for square devices and overridden by hello_world in
-    values-round/strings.xml for round devices.
-    -->
-  <string name="hello_world">Hello Square World!</string>
   <string name="select_pm"><![CDATA[12pm -> 4pm]]></string>
   <string name="select_am"><![CDATA[8am -> 12pm]]></string>
   <string name="select_half"><![CDATA[Half Day]]></string>
   <string name="select_full"><![CDATA[Full Day]]></string>
+  <string name="activity_desk_deskdetails"><U>Desk Details</U></string>
+  <string name="activity_desk_deskno"><U>Desk No</U></string>
+  <string name="activity_chair_type"><U>Chair Type</U></string>
+  <string name="activity_chair_size"><U>Chair Size</U></string>
+  <string name="activity_comp_os"><U>Computer OS</U></string>
+  <string name="activity_mon_size"><U>Monitor Size</U></string>
+  <string name="activity_mon_res"><U>Monitor Res</U></string>
+  <string name="activity_doc_model"><U>Docking Station</U></string>
+  <string name="activity_phone_number"><U>Phone Number</U></string>
+  <string name="activity_phone_dd"><U>Direct Dial</U></string>
 </resources>

@@ -75,5 +75,6 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
     //}
 
     open fun showRooms(rooms: List<RoomModel>) {}
-    open fun showDesks(desks: List<Desk>) {}
+    open fun showDesks(desk: List<Desk>) {}
+    open fun showDesk(desk: Desk) {}
 }

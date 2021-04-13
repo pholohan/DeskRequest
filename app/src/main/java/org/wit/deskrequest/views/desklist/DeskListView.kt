@@ -28,7 +28,7 @@ class DeskListView : BaseView(), DeskListener {
   }
 
   override fun onDeskClick(desk: Desk) {
-    presenter.viewMeetConfDetails()
+    presenter.viewDesk(desk)
   }
 
   override fun showDesks(desks: List<Desk>) {
