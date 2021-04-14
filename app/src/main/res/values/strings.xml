@@ -25,13 +25,13 @@
   <string name="select_half"><![CDATA[Half Day]]></string>
   <string name="select_full"><![CDATA[Full Day]]></string>
   <string name="activity_desk_deskdetails"><U>Desk Details</U></string>
-  <string name="activity_desk_deskno"><U>Desk No</U></string>
-  <string name="activity_chair_type"><U>Chair Type</U></string>
-  <string name="activity_chair_size"><U>Chair Size</U></string>
-  <string name="activity_comp_os"><U>Computer OS</U></string>
-  <string name="activity_mon_size"><U>Monitor Size</U></string>
-  <string name="activity_mon_res"><U>Monitor Res</U></string>
-  <string name="activity_doc_model"><U>Docking Station</U></string>
-  <string name="activity_phone_number"><U>Phone Number</U></string>
-  <string name="activity_phone_dd"><U>Direct Dial</U></string>
+  <string name="activity_desk_deskno"><U>Desk No:</U></string>
+  <string name="activity_chair_type"><U>Chair Type:</U></string>
+  <string name="activity_chair_size"><U>Chair Size:</U></string>
+  <string name="activity_comp_os"><U>Computer OS:</U></string>
+  <string name="activity_mon_size"><U>Monitor Size:</U></string>
+  <string name="activity_mon_res"><U>Monitor Res:</U></string>
+  <string name="activity_doc_model"><U>Docking Station:</U></string>
+  <string name="activity_phone_number"><U>Phone Number:</U></string>
+  <string name="activity_phone_dd"><U>Direct Dial:</U></string>
 </resources>

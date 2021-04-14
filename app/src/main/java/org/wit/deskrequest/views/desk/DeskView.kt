@@ -36,6 +36,6 @@ class DeskView : BaseView() {
     monResField.setText(desk.monitor.resolution)
     docModelField.setText(desk.dock.model)
     phNoField.setText(desk.phone.phno)
-    directDialField.setText("yes")
+    directDialField.setText((desk.phone.directdial.toString()))
   }
 }
