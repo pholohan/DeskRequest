@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context="org.wit.deskrequest.views.desk.DeskView">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.0"
+      tools:layout_editor_absoluteX="-16dp">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true"
+        app:elevation="0dip"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+      <androidx.appcompat.widget.Toolbar
+          android:id="@+id/toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:titleTextColor="@color/colorText" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/appBarLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="-11dp">
+
+
+      <Button
+          android:id="@+id/bookDesk"
+          android:layout_width="379dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="80dp"
+          android:layout_marginEnd="8dp"
+          android:background="@color/colorPrimaryDark"
+          android:paddingTop="8dp"
+          android:paddingBottom="8dp"
+          android:text="@string/button_book_desk"
+          android:textColor="@color/colorText"
+          android:textSize="16sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/phNoField" />
+
+      <TextView
+          android:id="@+id/deskInfo"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="60dp"
+          android:autofillHints=""
+          android:gravity="center_horizontal"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="@string/activity_desk_deskdetails"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="25sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/deskNo"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="@string/activity_desk_deskno"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/deskInfo" />
+
+      <TextView
+          android:id="@+id/deskNoField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Display Desk No"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toEndOf="@id/deskNo"
+          app:layout_constraintTop_toBottomOf="@id/deskInfo" />
+
+      <TextView
+          android:id="@+id/chairType"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="@string/activity_chair_type"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/deskNo" />
+
+      <TextView
+          android:id="@+id/chairSize"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="@string/activity_chair_size"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toEndOf="@id/chairType"
+          app:layout_constraintTop_toBottomOf="@id/deskNo" />
+
+      <TextView
+          android:id="@+id/chairTypeField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Chair Type"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/chairType" />
+
+      <TextView
+          android:id="@+id/chairSizeField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Chair Size"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toEndOf="@id/chairType"
+          app:layout_constraintTop_toBottomOf="@id/chairSize" />
+
+      <TextView
+          android:id="@+id/compOS"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="@string/activity_comp_os"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/chairSizeField" />
+
+      <TextView
+          android:id="@+id/compOSField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Computer OS"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toEndOf="@id/compOS"
+          app:layout_constraintTop_toBottomOf="@id/chairSizeField" />
+
+      <TextView
+          android:id="@+id/monSize"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="@string/activity_mon_size"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/compOS" />
+
+      <TextView
+          android:id="@+id/monRes"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="@string/activity_mon_res"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toEndOf="@id/monSize"
+          app:layout_constraintTop_toBottomOf="@id/compOS" />
+
+      <TextView
+          android:id="@+id/monSizeField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Monitor Size"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/monSize" />
+
+      <TextView
+          android:id="@+id/monResField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Monitor Resolution"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toEndOf="@id/monSize"
+          app:layout_constraintTop_toBottomOf="@id/monRes" />
+
+      <TextView
+          android:id="@+id/dockModel"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="@string/activity_doc_model"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/monResField" />
+
+      <TextView
+          android:id="@+id/docModelField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Docking Station"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toEndOf="@id/dockModel"
+          app:layout_constraintTop_toBottomOf="@id/monResField" />
+
+      <TextView
+          android:id="@+id/phNo"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="@string/activity_phone_number"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/dockModel" />
+
+      <TextView
+          android:id="@+id/directDial"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="@string/activity_phone_dd"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toEndOf="@id/phNo"
+          app:layout_constraintTop_toBottomOf="@id/dockModel" />
+
+      <TextView
+          android:id="@+id/phNoField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Phone No"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/phNo" />
+
+      <TextView
+          android:id="@+id/directDialField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Direct Dial"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toEndOf="@id/phNo"
+          app:layout_constraintTop_toBottomOf="@id/directDial" />
+
+
+      <RadioGroup
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="8dp"
+          android:orientation="vertical"
+          android:textSize="15sp"
+          app:layout_constraintStart_toEndOf="@id/phNo"
+          app:layout_constraintTop_toBottomOf="@id/phNoField">
+
+        <RadioButton
+            android:id="@+id/duration_am"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_am"
+            android:textSize="15sp" />
+        <RadioButton android:id="@+id/duration_pm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_pm"
+            android:textSize="15sp"/>
+      </RadioGroup>
+
+      <RadioGroup
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="8dp"
+          android:orientation="vertical"
+          android:textSize="15sp"
+          app:layout_constraintTop_toBottomOf="@id/phNoField">
+        <RadioButton
+            android:id="@+id/duration_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_full"
+            android:textSize="15sp"/>
+        <RadioButton android:id="@+id/duration_half"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_half"
+            android:textSize="15sp"/>
+      </RadioGroup>
+
+      <ImageView
+          android:id="@+id/deskrequestImage"
+          android:layout_width="0dp"
+          android:layout_height="100dp"
+          android:layout_marginStart="4dp"
+          android:layout_marginTop="8dp"
+          android:layout_marginEnd="5dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.503"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/bookDesk"
+          app:srcCompat="@mipmap/ic_launcher" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+  </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

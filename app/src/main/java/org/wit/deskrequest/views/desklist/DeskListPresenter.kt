@@ -4,15 +4,18 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.info
 import org.jetbrains.anko.uiThread
+import org.wit.deskrequest.models.Desk
 import org.wit.deskrequest.models.RoomModel
 import org.wit.deskrequest.views.BasePresenter
 import org.wit.deskrequest.views.BaseView
+import org.wit.deskrequest.views.VIEW
 
 class DeskListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
 
   var room = RoomModel(desk = arrayListOf())
 
-  fun viewMeetConfDetails() {
+  fun viewDesk(desk: Desk) {
+    view?.navigateTo(VIEW.DESKDETAILS, 0, "desk", desk)
   }
 
   init {
