@@ -25,6 +25,11 @@ class DeskView : BaseView() {
 
     presenter = initPresenter(DeskPresenter(this)) as DeskPresenter
     //presenter.loadDesks()
+
+    bookDesk.setOnClickListener{
+
+    }
+
   }
 
   override fun showDesk(desk: Desk){
