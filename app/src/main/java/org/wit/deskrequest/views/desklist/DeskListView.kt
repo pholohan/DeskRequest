@@ -1,5 +1,6 @@
 package org.wit.deskrequest.views.desklist
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_room_list.*
@@ -24,15 +25,20 @@ class DeskListView : BaseView(), DeskListener {
     presenter = initPresenter(DeskListPresenter(this)) as DeskListPresenter
     val layoutManager = LinearLayoutManager(this)
     recyclerView.layoutManager = layoutManager
-    //presenter.loadDesks()
+    //presenter.loadDesks(room)
   }
 
   override fun onDeskClick(desk: Desk) {
-    presenter.viewMeetConfDetails()
+    presenter.viewDesk(desk)
   }
 
   override fun showDesks(desks: List<Desk>) {
     recyclerView.adapter = DeskAdapter(desks, this)
     recyclerView.adapter?.notifyDataSetChanged()
   }
+
+  //override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+  //  presenter.loadDesks(room)
+  //  super.onActivityResult(requestCode, resultCode, data)
+  //}
 }
