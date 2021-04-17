@@ -7,9 +7,12 @@ import org.wit.deskrequest.R
 import org.wit.deskrequest.views.BaseView
 import kotlinx.android.synthetic.main.activity_welcome.*
 import kotlinx.android.synthetic.main.activity_welcome.toolbar
+import org.wit.deskrequest.models.BookingModel
 
 
 class WelcomeView : BaseView() {
+
+    var booking = BookingModel()
 
     lateinit var presenter: WelcomePresenter
 
@@ -24,6 +27,7 @@ class WelcomeView : BaseView() {
 
         buttonContinue.setOnClickListener{
             presenter.showOptions()
+            booking.d_date = calendarView.date.toString()
         }
     }
 }
