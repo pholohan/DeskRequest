@@ -4,16 +4,13 @@ import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_desk_details.*
 import kotlinx.android.synthetic.main.activity_room_list.*
 import org.wit.deskrequest.R
 import org.wit.deskrequest.models.BookingModel
 import org.wit.deskrequest.models.Desk
-import org.wit.deskrequest.models.RoomModel
 import org.wit.deskrequest.views.BaseView
-import org.wit.deskrequest.views.desklist.DeskListPresenter
-import org.wit.deskrequest.views.desklist.DeskListener
+
 
 class DeskView : BaseView() {
 
@@ -32,17 +29,17 @@ class DeskView : BaseView() {
     //presenter.loadDesks()
 
     duration_rg.setOnCheckedChangeListener(
-      RadioGroup.OnCheckedChangeListener { group, checkedID ->
-        val radio: RadioButton = findViewById(checkedID)
-        Toast.makeText(applicationContext," On checked change : ${radio.text}",
-            Toast.LENGTH_SHORT).show()
-      }
+        RadioGroup.OnCheckedChangeListener { group, checkedID ->
+          val radio: RadioButton = findViewById(checkedID)
+          Toast.makeText(applicationContext, " On checked change : ${radio.text}",
+              Toast.LENGTH_SHORT).show()
+        }
     )
 
     duration_rg2.setOnCheckedChangeListener(
         RadioGroup.OnCheckedChangeListener { group, checkedID ->
           val radio: RadioButton = findViewById(checkedID)
-          Toast.makeText(applicationContext," On checked change : ${radio.text}",
+          Toast.makeText(applicationContext, " On checked change : ${radio.text}",
               Toast.LENGTH_SHORT).show()
         }
     )
@@ -61,7 +58,7 @@ class DeskView : BaseView() {
         }
         else{
           // If no radio button checked in this radio group
-          Toast.makeText(applicationContext,"Please Select AM/PM",
+          Toast.makeText(applicationContext, "Please Select AM/PM",
               Toast.LENGTH_SHORT).show()
         }
       if (id2!=-1)
@@ -71,13 +68,13 @@ class DeskView : BaseView() {
       }
       else{
         // If no radio button checked in this radio group
-        Toast.makeText(applicationContext,"Please Select Full/Half Day",
+        Toast.makeText(applicationContext, "Please Select Full/Half Day",
             Toast.LENGTH_SHORT).show()
       }
         duration = full_day_duration +" "+ half_day_duration
         var fbid = 1234567891234567
         var d_date = "01/01/1999"
-        presenter.doAddBooking(deskNoField.text.toString().toLong(),fbid,d_date,duration)
+        presenter.doAddBooking(deskNoField.text.toString().toLong(), fbid, duration)
     }
 
   }
