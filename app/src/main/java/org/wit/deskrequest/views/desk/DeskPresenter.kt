@@ -26,6 +26,15 @@ class DeskPresenter (view: BaseView) : BasePresenter(view), AnkoLogger{
     }
   }
 
+  /*fun doUpdateDeskBooked(deskid:Long) {
+      desk = app.rooms.findDeskById(roomid,deskid)!!
+    doAsync {
+      app.rooms.updateDeskBooked(desk)
+      uiThread {
+        view?.finish()
+      }
+    }
+  }*/
 
   fun doAddBooking(deskid: Long, fbid: Long, d_duration: String){
     booking.deskid = deskid
@@ -34,6 +43,8 @@ class DeskPresenter (view: BaseView) : BasePresenter(view), AnkoLogger{
     booking.d_duration = d_duration
     doAsync {
         app.bookings.create(booking)
+        app.rooms.updateDeskBooked(desk)
+      info("Desk Boolean to be udpated: $desk")
       uiThread {
         view?.finish()
       }

@@ -72,6 +72,24 @@ class RoomJSONStore : RoomStore, AnkoLogger {
        return filteredDesks
     }
 
+    override fun updateDeskBooked(desk : Desk) {
+        //var foundDesk: Desk? = desks.find { p -> p.deskid == desk.deskid }
+        var foundDesk = desk
+        if(foundDesk!=null){
+            foundDesk.deskid = desk.deskid
+            foundDesk.deskbooked = true
+            foundDesk.chair.type = desk.chair.type
+            foundDesk.chair.size = desk.chair.size
+            foundDesk.computer.os = desk.computer.os
+            foundDesk.monitor.size = desk.monitor.resolution
+            foundDesk.dock.model = desk.dock.model
+            foundDesk.phone.phno = desk.phone.phno
+            foundDesk.phone.directdial = desk.phone.directdial
+            info("Sending to Desk $foundDesk")
+            deskserialize()
+        }
+    }
+
 
     override fun filterMeetConf(): List<RoomModel> {
         val filterMeetConfs: List<RoomModel> = rooms.filter { p -> p.roomType == "Meeting" || p.roomType == "Conf"}
@@ -107,6 +125,11 @@ class RoomJSONStore : RoomStore, AnkoLogger {
         write(context, JSON_FILE, jsonString)
     }
 
+    private fun deskserialize() {
+        val jsonString = gsonBuilder.toJson(desks, listType)
+        write(context, JSON_FILE, jsonString)
+    }
+
     private fun deserialize() {
         val jsonString = read(context, JSON_FILE)
         rooms = Gson().fromJson(jsonString, listType)
@@ -115,6 +138,17 @@ class RoomJSONStore : RoomStore, AnkoLogger {
     override fun findById(id:Long) : RoomModel? {
         val foundRoom: RoomModel? = rooms.find { it.roomid == id }
         return foundRoom
+    }
+
+    override fun findDeskById(roomid:Long, deskid:Long) : Desk? {
+            val filterRoom: List<RoomModel> = rooms.filter { p -> p.roomid == roomid }
+            var filteredDesks: List<Desk> = arrayListOf()
+            filterRoom.forEach {
+                filteredDesks = it.desk
+            }
+            info("Filtered Desks: $filteredDesks")
+            val updateDesk: Desk? = filteredDesks.find{it.deskid == deskid}
+            return updateDesk
     }
 
     override fun clear() {

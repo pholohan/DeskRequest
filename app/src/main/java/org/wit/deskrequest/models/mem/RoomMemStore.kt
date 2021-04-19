@@ -72,6 +72,14 @@ class RoomMemStore : RoomStore, AnkoLogger {
     return filteredDesks
   }
 
+  override fun updateDeskBooked(desk : Desk) {
+    var foundDesk: Desk? = desks.find { p -> p.deskid == desk.deskid }
+    if(foundDesk!=null){
+      foundDesk.deskbooked = true
+    }
+  }
+
+
   override fun filterMeetConf(): List<RoomModel> {
     //rooms.add(RoomModel(1000, "IT", "Office", "301", "10"))
     //rooms.add(RoomModel(1001, "Bunmahon Room", "Conf", "27/35", "20"))
@@ -113,6 +121,17 @@ class RoomMemStore : RoomStore, AnkoLogger {
   override fun findById(id:Long) : RoomModel? {
     val foundRoom: RoomModel? = rooms.find { it.roomid == id }
     return foundRoom
+  }
+
+  override fun findDeskById(roomid:Long, deskid:Long) : Desk? {
+    val filterRoom: List<RoomModel> = rooms.filter { p -> p.roomid == roomid }
+    var filteredDesks: List<Desk> = arrayListOf()
+    filterRoom.forEach {
+      filteredDesks = it.desk
+    }
+    info("Filtered Desks: $filteredDesks")
+    val updateDesk: Desk? = filteredDesks.find{it.deskid == deskid}
+    return updateDesk
   }
 
   override fun clear() {

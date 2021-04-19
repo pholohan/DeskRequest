@@ -6,10 +6,13 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_desk_details.*
 import kotlinx.android.synthetic.main.activity_room_list.*
+import kotlinx.android.synthetic.main.card_desk.*
+import org.jetbrains.anko.info
 import org.wit.deskrequest.R
 import org.wit.deskrequest.models.BookingModel
 import org.wit.deskrequest.models.Desk
 import org.wit.deskrequest.views.BaseView
+
 
 
 class DeskView : BaseView() {
@@ -73,8 +76,9 @@ class DeskView : BaseView() {
       }
         duration = full_day_duration +" "+ half_day_duration
         var fbid = 1234567891234567
-        var d_date = "01/01/1999"
         presenter.doAddBooking(deskNoField.text.toString().toLong(), fbid, duration)
+        //presenter.doUpdateDeskBooked(deskNoField.text.toString().toLong())
+        info("Desk to Update: $desk")
     }
 
   }
