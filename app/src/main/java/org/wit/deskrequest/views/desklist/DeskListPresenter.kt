@@ -36,4 +36,8 @@ class DeskListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
       }
     }
   }
+
+  fun loadBookings() {
+    view?.navigateTo(VIEW.BOOKINGS)
+  }
 }

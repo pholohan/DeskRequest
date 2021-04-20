@@ -1,32 +1,29 @@
-package org.wit.deskrequest.views.desklist
+package org.wit.deskrequest.views.bookinglist
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_room_list.*
 import org.wit.deskrequest.R
-import org.wit.deskrequest.models.Desk
-import org.wit.deskrequest.models.RoomModel
+import org.wit.deskrequest.models.BookingModel
 import org.wit.deskrequest.views.BaseView
-import org.wit.deskrequest.views.roomlist.RoomAdapter
-import org.wit.deskrequest.views.roomlist.RoomListener
 
-class DeskListView : BaseView(), DeskListener {
+class BookingListView: BaseView(), BookingListener {
 
-  lateinit var presenter: DeskListPresenter
+  lateinit var presenter: BookingListPresenter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_desk_list)
+    setContentView(R.layout.activity_booking_list)
 
     setSupportActionBar(toolbarList)
     super.init(toolbarList, true);
 
-    presenter = initPresenter(DeskListPresenter(this)) as DeskListPresenter
+    presenter = initPresenter(BookingListPresenter(this)) as BookingListPresenter
     val layoutManager = LinearLayoutManager(this)
     recyclerView.layoutManager = layoutManager
+    presenter.loadBookings()
 
     val bottomNavigationView =
         findViewById<View>(R.id.bottomNav) as BottomNavigationView
@@ -43,17 +40,12 @@ class DeskListView : BaseView(), DeskListener {
     }
   }
 
-  override fun onDeskClick(desk: Desk) {
-    presenter.viewDesk(desk)
+  override fun onBookingClick(booking: BookingModel) {
+    presenter.viewBooking(booking)
   }
 
-  override fun showDesks(desks: List<Desk>) {
-    recyclerView.adapter = DeskAdapter(desks, this)
+  override fun showBookings(bookings: List<BookingModel>) {
+    recyclerView.adapter = BookingListAdaptor(bookings, this)
     recyclerView.adapter?.notifyDataSetChanged()
   }
-
-  //override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-  //  presenter.loadDesks(room)
-  //  super.onActivityResult(requestCode, resultCode, data)
-  //}
 }
