@@ -13,6 +13,7 @@
   <string name="activity_meetconf_list">Meeting/Conference Rooms</string>
   <string name="activity_desk_list">Available Desks</string>
   <string name="activity_desk_details">Desk Details</string>
+  <string name="activity_bookings">Your Bookings</string>
   <string name="button_book_desk">Book This Desk</string>
   <string name="hint_desknumber">Desk Number</string>
   <string name="menu_bookdesk">Desk</string>

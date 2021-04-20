@@ -43,7 +43,7 @@ class DeskPresenter (view: BaseView) : BasePresenter(view), AnkoLogger{
     booking.d_duration = d_duration
     doAsync {
         app.bookings.create(booking)
-        app.rooms.updateDeskBooked(desk)
+        //app.rooms.updateDeskBooked(desk)
       info("Desk Boolean to be udpated: $desk")
       uiThread {
         view?.finish()
