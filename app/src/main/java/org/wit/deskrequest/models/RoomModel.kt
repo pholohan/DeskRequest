@@ -42,3 +42,4 @@ data class Dock(var dockid: String = "",
 @Parcelize
 data class Phone(var phno: String = "",
                  var directdial: Boolean = false):Parcelable
+

@@ -1,5 +1,6 @@
 package org.wit.deskrequest.views.desklist
 
+import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.info
@@ -39,5 +40,11 @@ class DeskListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
 
   fun loadBookings() {
     view?.navigateTo(VIEW.BOOKINGS)
+  }
+
+  fun doLogout() {
+    FirebaseAuth.getInstance().signOut()
+    //app.bookings.clear()
+    view?.navigateTo(VIEW.LOGIN)
   }
 }

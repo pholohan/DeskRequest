@@ -37,7 +37,7 @@ class DeskListView : BaseView(), DeskListener {
         //R.id.item_room -> presenter.doShowHillfortsMap()
         R.id.item_date -> presenter.loadBookings()
         //R.id.item_settings -> presenter.userSettings()
-        //R.id.item_logout -> presenter.doLogout()
+        R.id.item_logout -> presenter.doLogout()
       }
       true
     }
