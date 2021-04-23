@@ -2,6 +2,7 @@ package org.wit.deskrequest.views.login
 
 import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.toast
+import org.wit.deskrequest.models.firebase.RoomsFirestore
 import org.wit.deskrequest.views.BasePresenter
 import org.wit.deskrequest.views.BaseView
 import org.wit.deskrequest.views.VIEW
@@ -9,11 +10,11 @@ import org.wit.deskrequest.views.VIEW
 class LoginPresenter(view: BaseView) : BasePresenter(view) {
 
   var auth: FirebaseAuth = FirebaseAuth.getInstance()
-  //var fireStore: HillfortFireStore? = null
+  var fireStore: RoomsFirestore? = null
 
   init {
-    if (app.hillforts is HillfortFireStore) {
-      fireStore = app.hillforts as HillfortFireStore
+    if (app.rooms is RoomsFirestore) {
+      fireStore = app.rooms as RoomsFirestore
     }
   }
 
@@ -22,7 +23,7 @@ class LoginPresenter(view: BaseView) : BasePresenter(view) {
     auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(view!!) { task ->
       if (task.isSuccessful) {
         if(fireStore != null) {
-          fireStore!!.fetchHillforts {
+          fireStore!!.fetchRooms {
             view?.hideProgress()
             view?.navigateTo(VIEW.LIST)
           }
@@ -41,7 +42,7 @@ class LoginPresenter(view: BaseView) : BasePresenter(view) {
     view?.showProgress()
     auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(view!!) { task ->
       if (task.isSuccessful) {
-        fireStore!!.fetchHillforts {
+        fireStore!!.fetchRooms {
           view?.hideProgress()
           view?.navigateTo(VIEW.LIST)
         }

@@ -3,6 +3,7 @@
   <string name="title_activity_splash">SplashActivity</string>
   <string name="title_activity_welcome">Desk Request - Welcome</string>
   <string name="title_activity_options">Choose Booking Option</string>
+  <string name="title_activity_login">Log In to DeskRequest</string>
   <string name="activity_welcome_continue">Continue -></string>
   <string name="activity_welcome_text">Choose a Date</string>
   <string name="activity_book_options_conf">View Conference/Meeting Room</string>
