@@ -1,45 +1,34 @@
-package org.wit.deskrequest.models.json
+package org.wit.deskrequest.models.firebase
 
 import android.content.Context
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.google.gson.reflect.TypeToken
+import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.AnkoLogger
+import org.wit.deskrequest.models.RoomModel
+import org.wit.deskrequest.models.RoomStore
+import com.google.firebase.database.*
+import com.google.gson.Gson
 import org.jetbrains.anko.info
-import org.wit.deskrequest.helpers.exists
 import org.wit.deskrequest.helpers.read
 import org.wit.deskrequest.helpers.write
 import org.wit.deskrequest.models.Desk
-import org.wit.deskrequest.models.RoomModel
-import org.wit.deskrequest.models.RoomStore
-import java.util.*
+import org.wit.deskrequest.models.json.JSON_FILE
+import org.wit.deskrequest.models.json.generateRandomId
+import org.wit.deskrequest.models.json.gsonBuilder
+import org.wit.deskrequest.models.json.listType
 
-val JSON_FILE = "rooms.json"
-val gsonBuilder = GsonBuilder().setPrettyPrinting().create()
-val listType = object : TypeToken<ArrayList<RoomModel>>() {}.type
+class RoomsFirestore(val context: Context) : RoomStore, AnkoLogger {
 
-fun generateRandomId(): Long {
-    return Random().nextLong()
-}
+    val rooms = ArrayList<RoomModel>()
+    val desks = ArrayList<Desk>()
+    lateinit var userId: String
+    lateinit var db: DatabaseReference
 
-class RoomJSONStore : RoomStore, AnkoLogger {
 
-    val context: Context
-    var rooms = mutableListOf<RoomModel>()
-    var desks = mutableListOf<Desk>()
-
-    constructor (context: Context) {
-        this.context = context
-        if (exists(context, JSON_FILE)) {
-            deserialize()
-        }
-    }
-
-    override fun findAll(): MutableList<RoomModel> {
+    override fun findAll(): List<RoomModel> {
         return rooms
     }
 
-    override fun findAllDesks(): MutableList<Desk> {
+    override fun findAllDesks(): List<Desk> {
         return desks
     }
 
@@ -60,16 +49,16 @@ class RoomJSONStore : RoomStore, AnkoLogger {
     //         filteredDesks = it.desk
     //        info("Filtered Desks: $filteredDesks")
     //    }
-     //   return filteredDesks
+    //   return filteredDesks
     //}
     override fun filterDesks(id:Long): List<Desk>? {
         val filterRoom: List<RoomModel> = rooms.filter { p -> p.roomid == id }
         var filteredDesks: List<Desk>? = arrayListOf()
         filterRoom.forEach{
-             filteredDesks = it.desk
+            filteredDesks = it.desk
             info("Filtered Desks: $filteredDesks")
         }
-       return filteredDesks
+        return filteredDesks
     }
 
     override fun updateDeskBooked(desk : Desk) {
@@ -86,7 +75,6 @@ class RoomJSONStore : RoomStore, AnkoLogger {
             foundDesk.phone.phno = desk.phone.phno
             foundDesk.phone.directdial = desk.phone.directdial
             info("Sending to Desk $foundDesk")
-            deskserialize()
         }
     }
 
@@ -97,10 +85,12 @@ class RoomJSONStore : RoomStore, AnkoLogger {
     }
 
     override fun create(room: RoomModel) {
-        room.roomid = generateRandomId()
-        rooms.add(room)
-        serialize()
-    }
+        val key = db.child("rooms").push().key
+        key?.let {
+            //room.fbid = key
+            db.child("rooms").child(key).setValue(room)
+        }
+     }
 
 
     override fun update(room: RoomModel) {
@@ -110,30 +100,14 @@ class RoomJSONStore : RoomStore, AnkoLogger {
             foundRoom.roomType = room.roomType
             foundRoom.location = room.location
             foundRoom.capacity = room.capacity
-            serialize()
         }
     }
 
     override fun delete(room: RoomModel) {
         var foundRoom: RoomModel? = rooms.find { p -> p.roomid == room.roomid }
         rooms.remove(foundRoom)
-        serialize()
     }
 
-    private fun serialize() {
-        val jsonString = gsonBuilder.toJson(rooms, listType)
-        write(context, JSON_FILE, jsonString)
-    }
-
-    private fun deskserialize() {
-        val jsonString = gsonBuilder.toJson(desks, listType)
-        write(context, JSON_FILE, jsonString)
-    }
-
-    private fun deserialize() {
-        val jsonString = read(context, JSON_FILE)
-        rooms = Gson().fromJson(jsonString, listType)
-    }
 
     override fun findById(id:Long) : RoomModel? {
         val foundRoom: RoomModel? = rooms.find { it.roomid == id }
@@ -141,17 +115,33 @@ class RoomJSONStore : RoomStore, AnkoLogger {
     }
 
     override fun findDeskById(roomid:Long, deskid:Long) : Desk? {
-            val filterRoom: List<RoomModel> = rooms.filter { p -> p.roomid == roomid }
-            var filteredDesks: List<Desk>? = arrayListOf()
-            filterRoom.forEach {
-                filteredDesks = it.desk
-            }
-            info("Filtered Desks: $filteredDesks")
-            val updateDesk: Desk? = filteredDesks?.find{it.deskid == deskid}
-            return updateDesk
+        val filterRoom: List<RoomModel> = rooms.filter { p -> p.roomid == roomid }
+        var filteredDesks: List<Desk>? = arrayListOf()
+        filterRoom.forEach {
+            filteredDesks = it.desk
+        }
+        info("Filtered Desks: $filteredDesks")
+        val updateDesk: Desk? = filteredDesks?.find{it.deskid == deskid}
+        return updateDesk
     }
 
     override fun clear() {
         rooms.clear()
+    }
+
+    fun fetchRooms(roomsReady: () -> Unit) {
+        val valueEventListener = object : ValueEventListener {
+            override fun onCancelled(dataSnapshot: DatabaseError) {
+            }
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                info("Data $dataSnapshot")
+                dataSnapshot!!.children.mapNotNullTo(rooms) { it.getValue<RoomModel>(RoomModel::class.java)}
+                roomsReady()
+            }
+        }
+        userId = FirebaseAuth.getInstance().currentUser!!.uid
+        db = FirebaseDatabase.getInstance().reference
+        rooms.clear()
+        db.child("rooms").addListenerForSingleValueEvent(valueEventListener)
     }
 }

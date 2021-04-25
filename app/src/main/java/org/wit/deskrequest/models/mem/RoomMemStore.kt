@@ -62,9 +62,9 @@ class RoomMemStore : RoomStore, AnkoLogger {
     return filterOffices
   }
 
-  override fun filterDesks(id:Long): List<Desk> {
+  override fun filterDesks(id:Long): List<Desk>? {
     val filterRoom: List<RoomModel> = rooms.filter { p -> p.roomid == id }
-    var filteredDesks: List<Desk> = arrayListOf()
+    var filteredDesks: List<Desk>? = arrayListOf()
     filterRoom.forEach{
       filteredDesks = it.desk
       info("Filtered Desks: $filteredDesks")
@@ -125,12 +125,12 @@ class RoomMemStore : RoomStore, AnkoLogger {
 
   override fun findDeskById(roomid:Long, deskid:Long) : Desk? {
     val filterRoom: List<RoomModel> = rooms.filter { p -> p.roomid == roomid }
-    var filteredDesks: List<Desk> = arrayListOf()
+    var filteredDesks: List<Desk>? = arrayListOf()
     filterRoom.forEach {
       filteredDesks = it.desk
     }
     info("Filtered Desks: $filteredDesks")
-    val updateDesk: Desk? = filteredDesks.find{it.deskid == deskid}
+    val updateDesk: Desk? = filteredDesks?.find{it.deskid == deskid}
     return updateDesk
   }
 

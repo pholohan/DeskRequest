@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.AnkoLogger
 import org.wit.deskrequest.models.BookingModel
 import org.wit.deskrequest.models.Desk
@@ -11,6 +12,7 @@ import org.wit.deskrequest.models.RoomModel
 import org.wit.deskrequest.views.bookinglist.BookingListView
 import org.wit.deskrequest.views.desk.DeskView
 import org.wit.deskrequest.views.desklist.DeskListView
+import org.wit.deskrequest.views.login.LoginView
 import org.wit.deskrequest.views.meetconflist.MeetConfListView
 import org.wit.deskrequest.views.officelist.OfficeListView
 import org.wit.deskrequest.views.options.OptionsView
@@ -20,7 +22,7 @@ import org.wit.deskrequest.views.roomlist.RoomListView
 import org.wit.deskrequest.views.welcome.WelcomePresenter
 
 enum class VIEW {
-    WELCOME, OPTIONS, LIST, MEETCONF, OFFICE, DESK, DESKDETAILS, BOOKINGS
+    WELCOME, OPTIONS, LIST, MEETCONF, OFFICE, DESK, DESKDETAILS, BOOKINGS, LOGIN
 }
 
 open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
@@ -38,6 +40,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
             VIEW.DESK -> intent = Intent(this, DeskListView::class.java)
             VIEW.DESKDETAILS -> intent = Intent(this, DeskView::class.java)
             VIEW.BOOKINGS -> intent = Intent(this, BookingListView::class.java)
+            VIEW.LOGIN -> intent = Intent(this, LoginView::class.java)
         }
         if (key != "") {
             intent.putExtra(key, value)
@@ -54,10 +57,10 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
         toolbar.title = title
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(upEnabled)
-        //val user = FirebaseAuth.getInstance().currentUser
-        //if (user != null) {
-        //    toolbar.title = "${title}: ${user.email}"
-        //}
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            toolbar.title = "${title}: ${user.email}"
+        }
     }
 
     override fun onDestroy() {
@@ -81,4 +84,6 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
     open fun showDesks(desk: List<Desk>) {}
     open fun showDesk(desk: Desk) {}
     open fun showBookings(bookings: List<BookingModel>) {}
+    open fun showProgress() {}
+    open fun hideProgress() {}
 }

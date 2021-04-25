@@ -6,7 +6,7 @@ interface RoomStore {
   fun findFavourites(): List<RoomModel>
   fun filterOffice(): List<RoomModel>
   fun filterMeetConf(): List<RoomModel>
-  fun filterDesks(id:Long): List<Desk>
+  fun filterDesks(id:Long): List<Desk>?
   fun updateDeskBooked(desk: Desk)
   fun create(room: RoomModel)
   fun update(room: RoomModel)
