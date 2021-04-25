@@ -30,7 +30,7 @@ class DeskListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
   fun loadDesks(room: RoomModel) {
     doAsync {
       val roomid = room.roomid
-      val desks = app.rooms.filterDesks(roomid)
+      val desks = app.rooms.filterDesks(roomid)!!
       info("Desks: $desks")
       uiThread {
         view?.showDesks(desks)

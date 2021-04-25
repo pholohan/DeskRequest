@@ -25,11 +25,11 @@ class LoginPresenter(view: BaseView) : BasePresenter(view) {
         if(fireStore != null) {
           fireStore!!.fetchRooms {
             view?.hideProgress()
-            view?.navigateTo(VIEW.LIST)
+            view?.navigateTo(VIEW.WELCOME)
           }
         }else{
           view?.hideProgress()
-          view?.navigateTo(VIEW.LIST)
+          view?.navigateTo(VIEW.WELCOME)
         }
       } else {
         view?.hideProgress()
@@ -44,10 +44,10 @@ class LoginPresenter(view: BaseView) : BasePresenter(view) {
       if (task.isSuccessful) {
         fireStore!!.fetchRooms {
           view?.hideProgress()
-          view?.navigateTo(VIEW.LIST)
+          view?.navigateTo(VIEW.WELCOME)
         }
         view?.hideProgress()
-        view?.navigateTo(VIEW.LIST)
+        view?.navigateTo(VIEW.WELCOME)
       } else {
         view?.hideProgress()
         view?.toast("Sign Up Failed: ${task.exception?.message}")

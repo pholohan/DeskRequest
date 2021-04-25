@@ -23,6 +23,7 @@ class RoomsFirestore(val context: Context) : RoomStore, AnkoLogger {
     lateinit var userId: String
     lateinit var db: DatabaseReference
 
+
     override fun findAll(): List<RoomModel> {
         return rooms
     }
@@ -50,9 +51,9 @@ class RoomsFirestore(val context: Context) : RoomStore, AnkoLogger {
     //    }
     //   return filteredDesks
     //}
-    override fun filterDesks(id:Long): List<Desk> {
+    override fun filterDesks(id:Long): List<Desk>? {
         val filterRoom: List<RoomModel> = rooms.filter { p -> p.roomid == id }
-        var filteredDesks: List<Desk> = arrayListOf()
+        var filteredDesks: List<Desk>? = arrayListOf()
         filterRoom.forEach{
             filteredDesks = it.desk
             info("Filtered Desks: $filteredDesks")
@@ -84,8 +85,11 @@ class RoomsFirestore(val context: Context) : RoomStore, AnkoLogger {
     }
 
     override fun create(room: RoomModel) {
-        room.roomid = generateRandomId()
-        rooms.add(room)
+        val key = db.child("rooms").push().key
+        key?.let {
+            //room.fbid = key
+            db.child("rooms").child(key).setValue(room)
+        }
      }
 
 
@@ -112,12 +116,12 @@ class RoomsFirestore(val context: Context) : RoomStore, AnkoLogger {
 
     override fun findDeskById(roomid:Long, deskid:Long) : Desk? {
         val filterRoom: List<RoomModel> = rooms.filter { p -> p.roomid == roomid }
-        var filteredDesks: List<Desk> = arrayListOf()
+        var filteredDesks: List<Desk>? = arrayListOf()
         filterRoom.forEach {
             filteredDesks = it.desk
         }
         info("Filtered Desks: $filteredDesks")
-        val updateDesk: Desk? = filteredDesks.find{it.deskid == deskid}
+        val updateDesk: Desk? = filteredDesks?.find{it.deskid == deskid}
         return updateDesk
     }
 
@@ -138,6 +142,6 @@ class RoomsFirestore(val context: Context) : RoomStore, AnkoLogger {
         userId = FirebaseAuth.getInstance().currentUser!!.uid
         db = FirebaseDatabase.getInstance().reference
         rooms.clear()
-        db.child("rooms").child("").addListenerForSingleValueEvent(valueEventListener)
+        db.child("rooms").addListenerForSingleValueEvent(valueEventListener)
     }
 }

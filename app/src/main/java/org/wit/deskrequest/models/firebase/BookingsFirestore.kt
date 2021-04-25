@@ -1,9 +1,11 @@
 package org.wit.deskrequest.models.firebase
 
 import android.content.Context
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import com.google.gson.Gson
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
 import org.wit.deskrequest.helpers.exists
 import org.wit.deskrequest.helpers.read
 import org.wit.deskrequest.helpers.write
@@ -46,5 +48,21 @@ class BookingsFirestore(val context: Context) : BookingStore, AnkoLogger {
         if (foundBooking != null) {
             bookings.remove(foundBooking)
         }
+    }
+
+    fun fetchBookings(bookingsReady: () -> Unit) {
+        val valueEventListener = object : ValueEventListener {
+            override fun onCancelled(dataSnapshot: DatabaseError) {
+            }
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                info("Data $dataSnapshot")
+                dataSnapshot!!.children.mapNotNullTo(rooms) { it.getValue<RoomModel>(RoomModel::class.java)}
+                roomsReady()
+            }
+        }
+        userId = FirebaseAuth.getInstance().currentUser!!.uid
+        db = FirebaseDatabase.getInstance().reference
+        rooms.clear()
+        db.child("rooms").addListenerForSingleValueEvent(valueEventListener)
     }
 }
