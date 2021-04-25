@@ -5,4 +5,5 @@ interface BookingStore {
   fun create(booking: BookingModel)
   fun update(booking: BookingModel)
   fun delete(booking: BookingModel)
+  fun clear()
 }

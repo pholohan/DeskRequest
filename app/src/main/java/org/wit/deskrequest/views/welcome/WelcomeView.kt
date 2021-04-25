@@ -51,9 +51,7 @@ class WelcomeView : BaseView() {
 
         }
 
-
-
-
+        
 
         buttonContinue.setOnClickListener{
             presenter.showOptions()

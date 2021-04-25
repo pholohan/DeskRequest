@@ -75,8 +75,7 @@ class DeskView : BaseView() {
             Toast.LENGTH_SHORT).show()
       }
         duration = full_day_duration +" "+ half_day_duration
-        var fbid = 1234567891234567
-        presenter.doAddBooking(deskNoField.text.toString().toLong(), fbid, duration)
+        presenter.doAddBooking(deskNoField.text.toString().toLong(), duration)
         //presenter.doUpdateDeskBooked(deskNoField.text.toString().toLong())
         info("Desk to Update: $desk")
     }
