@@ -3,6 +3,7 @@
   <string name="title_activity_splash">SplashActivity</string>
   <string name="title_activity_welcome">Desk Request - Welcome</string>
   <string name="title_activity_options">Choose Booking Option</string>
+  <string name="title_activity_login">Log In to DeskRequest</string>
   <string name="activity_welcome_continue">Continue -></string>
   <string name="activity_welcome_text">Choose a Date</string>
   <string name="activity_book_options_conf">View Conference/Meeting Room</string>
@@ -35,4 +36,16 @@
   <string name="activity_doc_model"><U>Docking Station:</U></string>
   <string name="activity_phone_number"><U>Phone Number:</U></string>
   <string name="activity_phone_dd"><U>Direct Dial:</U></string>
+  <string name="invalid_username">Not a valid username</string>
+  <string name="invalid_password">Password must be >5 characters</string>
+  <string name="login_failed">"Login failed"</string>
+  <string name="empty_login">"Please complete both all fields"</string>
+  <string name="email_invalid">"Email Not Registered"</string>
+  <string name="password_invalid">"Password Not Recognised"</string>
+  <string name="edit_settings">"Edit User Settings"</string>
+  <string name="prompt_firstname">First Name</string>
+  <string name="prompt_lastname">Last Name</string>
+  <string name="prompt_email">Email</string>
+  <string name="prompt_password">Password</string>
+  <string name="prompt_confirm_password">Confirm Password</string>
 </resources>
