@@ -1,9 +1,11 @@
 package org.wit.deskrequest.views.desk
 
 import android.os.Bundle
+import android.view.View
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_desk_details.*
 import kotlinx.android.synthetic.main.activity_room_list.*
 import kotlinx.android.synthetic.main.card_desk.*

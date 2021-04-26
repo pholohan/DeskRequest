@@ -22,7 +22,7 @@ import org.wit.deskrequest.views.roomlist.RoomListView
 import org.wit.deskrequest.views.welcome.WelcomePresenter
 
 enum class VIEW {
-    WELCOME, OPTIONS, LIST, MEETCONF, OFFICE, DESK, DESKDETAILS, BOOKINGS, LOGIN
+    WELCOME, OPTIONS, LIST, MEETCONF, OFFICE, DESK, DESKDETAILS, ROOMDETAILS, BOOKINGS, LOGIN
 }
 
 open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
@@ -39,6 +39,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
             VIEW.OFFICE -> intent = Intent(this, OfficeListView::class.java)
             VIEW.DESK -> intent = Intent(this, DeskListView::class.java)
             VIEW.DESKDETAILS -> intent = Intent(this, DeskView::class.java)
+            //VIEW.ROOMDETAILS -> intent = Intent(this, DeskView::class.java)
             VIEW.BOOKINGS -> intent = Intent(this, BookingListView::class.java)
             VIEW.LOGIN -> intent = Intent(this, LoginView::class.java)
         }

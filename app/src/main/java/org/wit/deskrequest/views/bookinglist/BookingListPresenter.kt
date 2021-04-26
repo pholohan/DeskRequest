@@ -26,6 +26,10 @@ class BookingListPresenter(view: BaseView): BasePresenter(view), AnkoLogger {
     }
   }
 
+  fun loadWelcome() {
+    view?.navigateTo(VIEW.WELCOME)
+  }
+
   fun doLogout() {
     FirebaseAuth.getInstance().signOut()
     app.bookings.clear()

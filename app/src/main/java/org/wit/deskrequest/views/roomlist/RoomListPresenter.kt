@@ -1,5 +1,6 @@
 package org.wit.deskrequest.views.roomlist
 
+import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.info
@@ -21,5 +22,19 @@ class RoomListPresenter (view: BaseView) : BasePresenter(view), AnkoLogger{
         view?.showRooms(rooms)
       }
     }
+  }
+
+  fun loadWelcome() {
+    view?.navigateTo(VIEW.WELCOME)
+  }
+
+  fun loadBookings() {
+    view?.navigateTo(VIEW.BOOKINGS)
+  }
+
+  fun doLogout() {
+    FirebaseAuth.getInstance().signOut()
+    //app.bookings.clear()
+    view?.navigateTo(VIEW.LOGIN)
   }
 }

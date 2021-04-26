@@ -15,8 +15,9 @@ class LoginPresenter(view: BaseView) : BasePresenter(view) {
   var bookfireStore: BookingsFirestore? = null
 
   init {
-    if (app.rooms is RoomsFirestore) {
+    if (app.rooms is RoomsFirestore && app.bookings is BookingsFirestore) {
       fireStore = app.rooms as RoomsFirestore
+      bookfireStore = app.bookings as BookingsFirestore
     }
   }
 

@@ -65,7 +65,7 @@ class BookingsFirestore(val context: Context) : BookingStore, AnkoLogger {
             override fun onCancelled(dataSnapshot: DatabaseError) {
             }
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                info("Data $dataSnapshot")
+                info("Bookings Data $dataSnapshot")
                 dataSnapshot!!.children.mapNotNullTo(bookings) { it.getValue<BookingModel>(BookingModel::class.java)}
                 bookingsReady()
             }

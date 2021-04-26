@@ -30,9 +30,9 @@ class BookingListView: BaseView(), BookingListener {
 
     bottomNavigationView.setOnNavigationItemSelectedListener { item ->
       when (item.itemId) {
-        //R.id.item_desk -> presenter.doAddHillfort()
+        R.id.item_book -> presenter.loadWelcome()
         //R.id.item_room -> presenter.doShowHillfortsMap()
-        R.id.item_date -> presenter.loadBookings()
+        R.id.item_bookings -> presenter.loadBookings()
         //R.id.item_settings -> presenter.userSettings()
         R.id.item_logout -> presenter.doLogout()
       }
