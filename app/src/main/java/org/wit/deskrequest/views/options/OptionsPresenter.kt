@@ -28,6 +28,10 @@ class OptionsPresenter(view: BaseView) : BasePresenter(view){
     view?.navigateTo(VIEW.BOOKINGS)
   }
 
+  fun userSettings(){
+    view?.navigateTo(VIEW.SETTINGS)
+  }
+
   fun doLogout() {
     FirebaseAuth.getInstance().signOut()
     //app.bookings.clear()
