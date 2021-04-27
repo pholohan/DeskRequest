@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
   <item
-      android:id="@+id/item_desk"
+      android:id="@+id/item_book"
       android:icon="@drawable/ic_baseline_chair_24"
       android:title="@string/menu_bookdesk"
       app:showAsAction="never"/>
@@ -15,9 +15,9 @@
       app:showAsAction="never"/>
 
   <item
-      android:id="@+id/item_date"
+      android:id="@+id/item_bookings"
       android:icon="@drawable/ic_baseline_date_range_24"
-      android:title="@string/menu_date"
+      android:title="@string/menu_bookings"
       app:showAsAction="never"/>
 
   <item

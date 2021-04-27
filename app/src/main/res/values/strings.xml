@@ -17,9 +17,9 @@
   <string name="activity_bookings">Your Bookings</string>
   <string name="button_book_desk">Book This Desk</string>
   <string name="hint_desknumber">Desk Number</string>
-  <string name="menu_bookdesk">Desk</string>
+  <string name="menu_bookdesk">Book</string>
   <string name="menu_room">Room</string>
-  <string name="menu_date">Date</string>
+  <string name="menu_bookings">Bookings</string>
   <string name="menu_settings">Settings</string>
   <string name="menu_logout">Logout</string>
   <string name="select_pm"><![CDATA[12pm to 4pm]]></string>

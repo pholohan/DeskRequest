@@ -42,11 +42,10 @@ class BookingListAdaptor constructor(
   class MainHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(booking: BookingModel, listener: BookingListener) {
-      itemView.dbookid.text = ("Booking ID:" + booking.dbookid)
-      itemView.deskid.text = ("Booked:" + booking.deskid)
-      itemView.fbid.text = ("User: " + booking.fbid)
-      itemView.d_date.text = ("Date Booked" + booking.d_date)
-      itemView.d_duration.text = ("Duration" + booking.d_duration)
+      itemView.dbookid.text = ("Booking ID: " + booking.dbookid)
+      itemView.deskid.text = ("Booked: " + booking.deskid)
+      itemView.d_date.text = ("Date Booked: " + booking.d_date)
+      itemView.d_duration.text = ("Duration: " + booking.d_duration)
       itemView.setOnClickListener {
         listener.onBookingClick(booking)
       }

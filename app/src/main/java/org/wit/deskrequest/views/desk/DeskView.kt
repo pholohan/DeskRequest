@@ -1,9 +1,11 @@
 package org.wit.deskrequest.views.desk
 
 import android.os.Bundle
+import android.view.View
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_desk_details.*
 import kotlinx.android.synthetic.main.activity_room_list.*
 import kotlinx.android.synthetic.main.card_desk.*
@@ -75,8 +77,7 @@ class DeskView : BaseView() {
             Toast.LENGTH_SHORT).show()
       }
         duration = full_day_duration +" "+ half_day_duration
-        var fbid = 1234567891234567
-        presenter.doAddBooking(deskNoField.text.toString().toLong(), fbid, duration)
+        presenter.doAddBooking(deskNoField.text.toString().toLong(), duration)
         //presenter.doUpdateDeskBooked(deskNoField.text.toString().toLong())
         info("Desk to Update: $desk")
     }

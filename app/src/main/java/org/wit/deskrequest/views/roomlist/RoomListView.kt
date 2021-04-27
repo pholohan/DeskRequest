@@ -1,7 +1,9 @@
 package org.wit.deskrequest.views.roomlist
 
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_book_options.*
 import kotlinx.android.synthetic.main.activity_room_list.*
 import org.wit.deskrequest.R
@@ -23,6 +25,20 @@ class RoomListView : BaseView(), RoomListener {
     val layoutManager = LinearLayoutManager(this)
     recyclerView.layoutManager = layoutManager
     presenter.loadRooms()
+
+    val bottomNavigationView =
+        findViewById<View>(R.id.bottomNav) as BottomNavigationView
+
+    bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+      when (item.itemId) {
+        R.id.item_book -> presenter.loadWelcome()
+        //R.id.item_room -> presenter.doShowHillfortsMap()
+        R.id.item_bookings -> presenter.loadBookings()
+        //R.id.item_settings -> presenter.userSettings()
+        R.id.item_logout -> presenter.doLogout()
+      }
+      true
+    }
 
   }
 

@@ -134,7 +134,7 @@ class RoomsFirestore(val context: Context) : RoomStore, AnkoLogger {
             override fun onCancelled(dataSnapshot: DatabaseError) {
             }
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                info("Data $dataSnapshot")
+                info("Rooms Data $dataSnapshot")
                 dataSnapshot!!.children.mapNotNullTo(rooms) { it.getValue<RoomModel>(RoomModel::class.java)}
                 roomsReady()
             }

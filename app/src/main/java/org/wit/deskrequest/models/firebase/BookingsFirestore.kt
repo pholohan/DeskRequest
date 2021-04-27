@@ -30,8 +30,14 @@ class BookingsFirestore(val context: Context) : BookingStore, AnkoLogger {
     }
 
     override fun create(booking: BookingModel) {
-        booking.dbookid = generateRandomBookingId()
-        bookings.add(booking)
+        db = FirebaseDatabase.getInstance().reference
+        userId = FirebaseAuth.getInstance().currentUser!!.uid
+        val key = db.child("users").child(userId).child("bookings").push().key
+        key?.let {
+            booking.fbid = key
+            bookings.add(booking)
+            db.child("users").child(userId).child("bookings").child(key).setValue(booking)
+        }
     }
 
 
@@ -50,19 +56,23 @@ class BookingsFirestore(val context: Context) : BookingStore, AnkoLogger {
         }
     }
 
+    override fun clear() {
+        bookings.clear()
+    }
+
     fun fetchBookings(bookingsReady: () -> Unit) {
         val valueEventListener = object : ValueEventListener {
             override fun onCancelled(dataSnapshot: DatabaseError) {
             }
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                info("Data $dataSnapshot")
-                dataSnapshot!!.children.mapNotNullTo(rooms) { it.getValue<RoomModel>(RoomModel::class.java)}
-                roomsReady()
+                info("Bookings Data $dataSnapshot")
+                dataSnapshot!!.children.mapNotNullTo(bookings) { it.getValue<BookingModel>(BookingModel::class.java)}
+                bookingsReady()
             }
         }
         userId = FirebaseAuth.getInstance().currentUser!!.uid
         db = FirebaseDatabase.getInstance().reference
-        rooms.clear()
-        db.child("rooms").addListenerForSingleValueEvent(valueEventListener)
+        bookings.clear()
+        db.child("users").child(userId).child("bookings").addListenerForSingleValueEvent(valueEventListener)
     }
 }
