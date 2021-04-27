@@ -71,4 +71,9 @@ class BookingJSONStore: BookingStore {
     val jsonString = read(context, JSON_BOOKING_FILE)
     bookings = Gson().fromJson(jsonString, listTypeBooking)
   }
+
+  override fun clear() {
+    bookings.clear()
+  }
+
 }

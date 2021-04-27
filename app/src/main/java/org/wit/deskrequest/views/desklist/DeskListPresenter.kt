@@ -17,6 +17,7 @@ class DeskListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
 
   fun viewDesk(desk: Desk) {
     view?.navigateTo(VIEW.DESKDETAILS, 0, "desk", desk)
+    //view?.navigateTo(VIEW.ROOMDETAILS, 0, "room", room)
   }
 
   init {
@@ -36,6 +37,10 @@ class DeskListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
         view?.showDesks(desks)
       }
     }
+  }
+
+  fun loadWelcome() {
+    view?.navigateTo(VIEW.WELCOME)
   }
 
   fun loadBookings() {
