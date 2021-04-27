@@ -34,7 +34,7 @@ class RoomListView : BaseView(), RoomListener {
         R.id.item_book -> presenter.loadWelcome()
         //R.id.item_room -> presenter.doShowHillfortsMap()
         R.id.item_bookings -> presenter.loadBookings()
-        //R.id.item_settings -> presenter.userSettings()
+        R.id.item_settings -> presenter.userSettings()
         R.id.item_logout -> presenter.doLogout()
       }
       true
