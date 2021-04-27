@@ -18,6 +18,9 @@ class WelcomePresenter (view: BaseView) : BasePresenter(view)  {
     view?.navigateTo(VIEW.WELCOME)
   }
 
+  fun userSettings(){
+    view?.navigateTo(VIEW.SETTINGS)
+  }
 
   fun doLogout() {
     FirebaseAuth.getInstance().signOut()

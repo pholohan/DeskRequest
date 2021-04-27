@@ -47,6 +47,10 @@ class DeskListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
     view?.navigateTo(VIEW.BOOKINGS)
   }
 
+  fun userSettings(){
+    view?.navigateTo(VIEW.SETTINGS)
+  }
+
   fun doLogout() {
     FirebaseAuth.getInstance().signOut()
     //app.bookings.clear()
