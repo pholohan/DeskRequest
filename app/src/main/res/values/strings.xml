@@ -5,6 +5,7 @@
   <string name="title_activity_options">Choose Booking Option</string>
   <string name="title_activity_login">Log In to DeskRequest</string>
   <string name="title_activity_settings">Settings</string>
+  <string name="title_activity_bookings">Booking Details</string>
   <string name="activity_welcome_continue">Continue -></string>
   <string name="activity_welcome_text">Choose a Date</string>
   <string name="activity_book_options_conf">View Conference/Meeting Room</string>
@@ -15,6 +16,7 @@
   <string name="activity_meetconf_list">Meeting/Conference Rooms</string>
   <string name="activity_desk_list">Available Desks</string>
   <string name="activity_desk_details">Desk Details</string>
+  <string name="activity_booking_details">Booking Details</string>
   <string name="activity_bookings">Your Bookings</string>
   <string name="activity_settings">Settings</string>
   <string name="button_book_desk">Book This Desk</string>

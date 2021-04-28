@@ -13,7 +13,7 @@ import org.wit.deskrequest.views.VIEW
 class BookingListPresenter(view: BaseView): BasePresenter(view), AnkoLogger {
 
   fun viewBooking(booking: BookingModel){
-
+    view?.navigateTo(VIEW.BOOKDETAILS, 0, "booking", booking)
   }
 
   fun loadBookings() {
