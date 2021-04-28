@@ -50,10 +50,8 @@ class BookingsFirestore(val context: Context) : BookingStore, AnkoLogger {
     }
 
     override fun delete(booking: BookingModel) {
-        var foundBooking: BookingModel? = bookings.find { p -> p.dbookid == booking.dbookid }
-        if (foundBooking != null) {
-            bookings.remove(foundBooking)
-        }
+        db.child("users").child(userId).child("bookings").child(booking.fbid).removeValue()
+        bookings.remove(booking)
     }
 
     override fun clear() {

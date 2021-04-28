@@ -27,7 +27,8 @@ class BookingPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
   }
 
   fun doCancelBooking(){
-
+    app.bookings.delete(booking)
+    view?.finish()
   }
 
   fun loadWelcome() {
