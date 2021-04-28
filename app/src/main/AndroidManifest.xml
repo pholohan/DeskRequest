@@ -21,6 +21,11 @@
         android:label="@string/title_activity_settings">
     </activity>
 
+    <activity
+        android:name=".views.booking.BookingView"
+        android:label="@string/title_activity_settings">
+    </activity>
+
      <activity
         android:name=".views.welcome.WelcomeView"
         android:label="@string/title_activity_welcome">
