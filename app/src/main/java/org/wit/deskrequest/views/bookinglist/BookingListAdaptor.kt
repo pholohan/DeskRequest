@@ -43,7 +43,7 @@ class BookingListAdaptor constructor(
 
     fun bind(booking: BookingModel, listener: BookingListener) {
       itemView.dbookid.text = ("Booking ID: " + booking.dbookid)
-      itemView.deskid.text = ("Booked: " + booking.deskid)
+      itemView.deskid.text = ("Desk Booked: " + booking.deskid)
       itemView.d_date.text = ("Date Booked: " + booking.d_date)
       itemView.d_duration.text = ("Duration: " + booking.d_duration)
       itemView.setOnClickListener {
