@@ -42,11 +42,11 @@ class BookingsFirestore(val context: Context) : BookingStore, AnkoLogger {
 
 
     override fun update(booking: BookingModel) {
-        var foundBooking: BookingModel? = bookings.find { p -> p.dbookid == booking.dbookid }
+        var foundBooking: BookingModel? = bookings.find { p -> p.fbid == booking.fbid }
         if (foundBooking != null) {
-            foundBooking.d_date = booking.d_date
             foundBooking.d_duration = booking.d_duration
         }
+        db.child("users").child(userId).child("bookings").child(booking.fbid).setValue(booking)
     }
 
     override fun delete(booking: BookingModel) {

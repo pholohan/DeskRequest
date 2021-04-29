@@ -2,7 +2,9 @@ package org.wit.deskrequest.views.booking
 
 import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.info
+import org.jetbrains.anko.uiThread
 import org.wit.deskrequest.models.BookingModel
 import org.wit.deskrequest.models.Desk
 import org.wit.deskrequest.views.BasePresenter
@@ -22,8 +24,14 @@ class BookingPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
     }
   }
 
-  fun doUpdateBooking(){
-
+  fun doUpdateBooking(duration: String) {
+    booking.d_duration = duration
+    doAsync {
+      app.bookings.update(booking)
+      uiThread {
+        view?.finish()
+      }
+    }
   }
 
   fun doCancelBooking(){
