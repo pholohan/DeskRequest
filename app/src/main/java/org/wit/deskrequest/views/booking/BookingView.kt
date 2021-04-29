@@ -76,14 +76,14 @@ class BookingView : BaseView() {
             Toast.LENGTH_SHORT).show()
       }
       duration = full_day_duration + " " + half_day_duration
-      presenter.doUpdateBooking()
-      //presenter.doUpdateDeskBooked(deskNoField.text.toString().toLong())
+      presenter.doUpdateBooking(duration)
       info("Desk to Update: $desk")
     }
 
     bookCancel.setOnClickListener{
       presenter.doCancelBooking()
     }
+
 
     val bottomNavigationView =
         findViewById<View>(R.id.bottomNav) as BottomNavigationView

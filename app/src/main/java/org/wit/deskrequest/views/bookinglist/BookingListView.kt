@@ -1,5 +1,6 @@
 package org.wit.deskrequest.views.bookinglist
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,5 +48,10 @@ class BookingListView: BaseView(), BookingListener {
   override fun showBookings(bookings: List<BookingModel>) {
     recyclerView.adapter = BookingListAdaptor(bookings, this)
     recyclerView.adapter?.notifyDataSetChanged()
+  }
+
+  override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    presenter.loadBookings()
+    super.onActivityResult(requestCode, resultCode, data)
   }
 }

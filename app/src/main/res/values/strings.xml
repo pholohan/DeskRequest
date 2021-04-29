@@ -40,6 +40,12 @@
   <string name="activity_doc_model"><U>Docking Station:</U></string>
   <string name="activity_phone_number"><U>Phone Number:</U></string>
   <string name="activity_phone_dd"><U>Direct Dial:</U></string>
+  <string name="activity_book_ref"><U>Reference No :</U></string>
+  <string name="activity_book_date"><U>Date Booked :</U></string>
+  <string name="activity_book_duration"><U>Duration :</U></string>
+  <string name="activity_book_ref_hint"><U>Reference No</U></string>
+  <string name="activity_book_date_hint"><U>Date Booked</U></string>
+  <string name="activity_book_duration_hint"><U>Duration</U></string>
   <string name="invalid_username">Not a valid username</string>
   <string name="invalid_password">Password must be >5 characters</string>
   <string name="login_failed">"Login failed"</string>
