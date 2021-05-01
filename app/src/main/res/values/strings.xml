@@ -17,6 +17,7 @@
   <string name="activity_desk_list">Available Desks</string>
   <string name="activity_desk_details">Desk Details</string>
   <string name="activity_booking_details">Booking Details</string>
+  <string name="activity_room_details">Room Details</string>
   <string name="activity_bookings">Your Bookings</string>
   <string name="activity_settings">Settings</string>
   <string name="button_book_desk">Book This Desk</string>

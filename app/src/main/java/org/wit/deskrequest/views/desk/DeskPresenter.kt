@@ -32,15 +32,15 @@ class DeskPresenter(view: BaseView) : BasePresenter(view), AnkoLogger{
     }
   }
 
-  /*fun doUpdateDeskBooked(deskid:Long) {
-      desk = app.rooms.findDeskById(roomid,deskid)!!
+  fun doUpdateDeskBooked(deskbooked: Boolean) {
+    desk.deskbooked = deskbooked
     doAsync {
       app.rooms.updateDeskBooked(desk)
       uiThread {
         view?.finish()
       }
     }
-  }*/
+  }
 
   fun doAddBooking(deskid: Long, d_duration: String){
     val unique_id = (Date().getTime() / 1000L % Int.MAX_VALUE) as Long
