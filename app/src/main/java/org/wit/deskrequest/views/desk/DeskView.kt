@@ -78,7 +78,7 @@ class DeskView : BaseView() {
       }
         duration = full_day_duration +" "+ half_day_duration
         presenter.doAddBooking(deskNoField.text.toString().toLong(), duration)
-        presenter.doUpdateDeskBooked(true)
+        //presenter.doUpdateDeskBooked(true)
         info("Desk to Update: $desk")
     }
 

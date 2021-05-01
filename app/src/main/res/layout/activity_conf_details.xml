@@ -43,7 +43,7 @@
 
 
       <Button
-          android:id="@+id/bookDesk"
+          android:id="@+id/bookConf"
           android:layout_width="379dp"
           android:layout_height="wrap_content"
           android:layout_marginTop="80dp"
@@ -51,15 +51,15 @@
           android:background="@color/colorPrimaryDark"
           android:paddingTop="8dp"
           android:paddingBottom="8dp"
-          android:text="@string/button_book_desk"
+          android:text="@string/button_book_room"
           android:textColor="@color/colorText"
           android:textSize="16sp"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/phNoField" />
+          app:layout_constraintTop_toBottomOf="@+id/coffeeField" />
 
       <TextView
-          android:id="@+id/deskInfo"
+          android:id="@+id/confInfo"
           android:layout_width="match_parent"
           android:layout_height="50dp"
           android:layout_marginStart="8dp"
@@ -69,14 +69,14 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="@string/activity_room_details"
+          android:text="@string/activity_conf_details"
           android:textColor="@color/colorPrimaryDark"
           android:textSize="25sp"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent" />
 
       <TextView
-          android:id="@+id/deskNo"
+          android:id="@+id/confName"
           android:layout_width="200dp"
           android:layout_height="40dp"
           android:layout_marginStart="8dp"
@@ -85,30 +85,30 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="@string/activity_desk_deskno"
+          android:text="Room Name: "
           android:textColor="@color/colorPrimaryDark"
           android:textSize="20sp"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/deskInfo" />
+          app:layout_constraintTop_toBottomOf="@id/confInfo" />
 
       <TextView
-          android:id="@+id/deskNoField"
+          android:id="@+id/confNameField"
           android:layout_width="200dp"
           android:layout_height="40dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="5dp"
           android:autofillHints=""
-          android:hint="Display Desk No"
+          android:hint="Display Room Name"
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorBotNavText"
           android:textSize="15sp"
-          app:layout_constraintStart_toEndOf="@id/deskNo"
-          app:layout_constraintTop_toBottomOf="@id/deskInfo" />
+          app:layout_constraintStart_toEndOf="@id/confName"
+          app:layout_constraintTop_toBottomOf="@id/confInfo" />
 
       <TextView
-          android:id="@+id/chairType"
+          android:id="@+id/speakerType"
           android:layout_width="200dp"
           android:layout_height="40dp"
           android:layout_marginStart="8dp"
@@ -117,14 +117,14 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="@string/activity_chair_type"
+          android:text="Speaker Type: "
           android:textColor="@color/colorPrimaryDark"
           android:textSize="20sp"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/deskNo" />
+          app:layout_constraintTop_toBottomOf="@id/confName" />
 
       <TextView
-          android:id="@+id/chairSize"
+          android:id="@+id/screenSize"
           android:layout_width="200dp"
           android:layout_height="40dp"
           android:layout_marginStart="8dp"
@@ -133,142 +133,46 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="@string/activity_chair_size"
+          android:text="Screen Size"
           android:textColor="@color/colorPrimaryDark"
           android:textSize="20sp"
-          app:layout_constraintStart_toEndOf="@id/chairType"
-          app:layout_constraintTop_toBottomOf="@id/deskNo" />
+          app:layout_constraintStart_toEndOf="@id/speakerType"
+          app:layout_constraintTop_toBottomOf="@id/confName" />
 
       <TextView
-          android:id="@+id/chairTypeField"
+          android:id="@+id/speakerTypeField"
           android:layout_width="200dp"
           android:layout_height="40dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="5dp"
           android:autofillHints=""
-          android:hint="Chair Type"
-          android:maxLength="25"
-          android:maxLines="1"
-          android:padding="8dp"
-          android:textColor="@color/colorBotNavText"
-          android:textSize="15sp"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/chairType" />
-
-      <TextView
-          android:id="@+id/chairSizeField"
-          android:layout_width="200dp"
-          android:layout_height="40dp"
-          android:layout_marginStart="8dp"
-          android:layout_marginTop="5dp"
-          android:autofillHints=""
-          android:hint="Chair Size"
-          android:maxLength="25"
-          android:maxLines="1"
-          android:padding="8dp"
-          android:textColor="@color/colorBotNavText"
-          android:textSize="15sp"
-          app:layout_constraintStart_toEndOf="@id/chairType"
-          app:layout_constraintTop_toBottomOf="@id/chairSize" />
-
-      <TextView
-          android:id="@+id/compOS"
-          android:layout_width="200dp"
-          android:layout_height="40dp"
-          android:layout_marginStart="8dp"
-          android:layout_marginTop="5dp"
-          android:autofillHints=""
-          android:maxLength="25"
-          android:maxLines="1"
-          android:padding="8dp"
-          android:text="@string/activity_comp_os"
-          android:textColor="@color/colorPrimaryDark"
-          android:textSize="20sp"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/chairSizeField" />
-
-      <TextView
-          android:id="@+id/compOSField"
-          android:layout_width="200dp"
-          android:layout_height="40dp"
-          android:layout_marginStart="8dp"
-          android:layout_marginTop="5dp"
-          android:autofillHints=""
-          android:hint="Computer OS"
-          android:maxLength="25"
-          android:maxLines="1"
-          android:padding="8dp"
-          android:textColor="@color/colorBotNavText"
-          android:textSize="15sp"
-          app:layout_constraintStart_toEndOf="@id/compOS"
-          app:layout_constraintTop_toBottomOf="@id/chairSizeField" />
-
-      <TextView
-          android:id="@+id/monSize"
-          android:layout_width="200dp"
-          android:layout_height="40dp"
-          android:layout_marginStart="8dp"
-          android:layout_marginTop="5dp"
-          android:autofillHints=""
-          android:maxLength="25"
-          android:maxLines="1"
-          android:padding="8dp"
-          android:text="@string/activity_mon_size"
-          android:textColor="@color/colorPrimaryDark"
-          android:textSize="20sp"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/compOS" />
-
-      <TextView
-          android:id="@+id/monRes"
-          android:layout_width="200dp"
-          android:layout_height="40dp"
-          android:layout_marginStart="8dp"
-          android:layout_marginTop="5dp"
-          android:autofillHints=""
-          android:maxLength="25"
-          android:maxLines="1"
-          android:padding="8dp"
-          android:text="@string/activity_mon_res"
-          android:textColor="@color/colorPrimaryDark"
-          android:textSize="20sp"
-          app:layout_constraintStart_toEndOf="@id/monSize"
-          app:layout_constraintTop_toBottomOf="@id/compOS" />
-
-      <TextView
-          android:id="@+id/monSizeField"
-          android:layout_width="200dp"
-          android:layout_height="40dp"
-          android:layout_marginStart="8dp"
-          android:layout_marginTop="5dp"
-          android:autofillHints=""
-          android:hint="Monitor Size"
+          android:hint="Speaker Type"
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorBotNavText"
           android:textSize="15sp"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/monSize" />
+          app:layout_constraintTop_toBottomOf="@id/speakerType" />
 
       <TextView
-          android:id="@+id/monResField"
+          android:id="@+id/screenSizeField"
           android:layout_width="200dp"
           android:layout_height="40dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="5dp"
           android:autofillHints=""
-          android:hint="Monitor Resolution"
+          android:hint="Screen Size"
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorBotNavText"
           android:textSize="15sp"
-          app:layout_constraintStart_toEndOf="@id/monSize"
-          app:layout_constraintTop_toBottomOf="@id/monRes" />
+          app:layout_constraintStart_toEndOf="@id/speakerType"
+          app:layout_constraintTop_toBottomOf="@id/screenSize" />
 
       <TextView
-          android:id="@+id/dockModel"
+          android:id="@+id/whiteboard"
           android:layout_width="200dp"
           android:layout_height="40dp"
           android:layout_marginStart="8dp"
@@ -277,30 +181,30 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="@string/activity_doc_model"
+          android:text="Whiteboard: "
           android:textColor="@color/colorPrimaryDark"
           android:textSize="20sp"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/monResField" />
+          app:layout_constraintTop_toBottomOf="@id/speakerTypeField" />
 
       <TextView
-          android:id="@+id/docModelField"
+          android:id="@+id/whiteboardField"
           android:layout_width="200dp"
           android:layout_height="40dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="5dp"
           android:autofillHints=""
-          android:hint="Docking Station"
+          android:hint="Whiteboard"
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorBotNavText"
           android:textSize="15sp"
-          app:layout_constraintStart_toEndOf="@id/dockModel"
-          app:layout_constraintTop_toBottomOf="@id/monResField" />
+          app:layout_constraintStart_toEndOf="@id/whiteboard"
+          app:layout_constraintTop_toBottomOf="@id/screenSizeField" />
 
       <TextView
-          android:id="@+id/phNo"
+          android:id="@+id/coffee"
           android:layout_width="200dp"
           android:layout_height="40dp"
           android:layout_marginStart="8dp"
@@ -309,59 +213,28 @@
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
-          android:text="@string/activity_phone_number"
+          android:text="Coffee: "
           android:textColor="@color/colorPrimaryDark"
           android:textSize="20sp"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/dockModel" />
+          app:layout_constraintTop_toBottomOf="@id/whiteboard" />
 
       <TextView
-          android:id="@+id/directDial"
+          android:id="@+id/coffeeField"
           android:layout_width="200dp"
           android:layout_height="40dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="5dp"
           android:autofillHints=""
-          android:maxLength="25"
-          android:maxLines="1"
-          android:padding="8dp"
-          android:text="@string/activity_phone_dd"
-          android:textColor="@color/colorPrimaryDark"
-          android:textSize="20sp"
-          app:layout_constraintStart_toEndOf="@id/phNo"
-          app:layout_constraintTop_toBottomOf="@id/dockModel" />
-
-      <TextView
-          android:id="@+id/phNoField"
-          android:layout_width="200dp"
-          android:layout_height="40dp"
-          android:layout_marginStart="8dp"
-          android:layout_marginTop="5dp"
-          android:autofillHints=""
-          android:hint="Phone No"
+          android:hint="Coffee"
           android:maxLength="25"
           android:maxLines="1"
           android:padding="8dp"
           android:textColor="@color/colorBotNavText"
           android:textSize="15sp"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/phNo" />
+          app:layout_constraintStart_toEndOf="@id/coffee"
+          app:layout_constraintTop_toBottomOf="@id/whiteboardField" />
 
-      <TextView
-          android:id="@+id/directDialField"
-          android:layout_width="200dp"
-          android:layout_height="40dp"
-          android:layout_marginStart="8dp"
-          android:layout_marginTop="5dp"
-          android:autofillHints=""
-          android:hint="Direct Dial"
-          android:maxLength="25"
-          android:maxLines="1"
-          android:padding="8dp"
-          android:textColor="@color/colorBotNavText"
-          android:textSize="15sp"
-          app:layout_constraintStart_toEndOf="@id/phNo"
-          app:layout_constraintTop_toBottomOf="@id/directDial" />
 
 
       <RadioGroup android:id="@+id/duration_rg"
@@ -371,8 +244,8 @@
           android:layout_marginTop="8dp"
           android:orientation="vertical"
           android:textSize="15sp"
-          app:layout_constraintStart_toEndOf="@id/phNo"
-          app:layout_constraintTop_toBottomOf="@id/phNoField">
+          app:layout_constraintStart_toEndOf="@id/coffee"
+          app:layout_constraintTop_toBottomOf="@id/coffeeField">
 
         <RadioButton
             android:id="@+id/duration_am"
@@ -394,7 +267,7 @@
           android:layout_marginTop="8dp"
           android:orientation="vertical"
           android:textSize="15sp"
-          app:layout_constraintTop_toBottomOf="@id/phNoField">
+          app:layout_constraintTop_toBottomOf="@id/coffeeField">
         <RadioButton
             android:id="@+id/duration_full"
             android:layout_width="wrap_content"
@@ -413,12 +286,12 @@
           android:layout_width="0dp"
           android:layout_height="100dp"
           android:layout_marginStart="4dp"
-          android:layout_marginTop="8dp"
+          android:layout_marginTop="32dp"
           android:layout_marginEnd="5dp"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintHorizontal_bias="0.503"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/bookDesk"
+          app:layout_constraintTop_toBottomOf="@+id/bookConf"
           app:srcCompat="@mipmap/ic_launcher" />
 
 

@@ -45,7 +45,11 @@ class MeetConfListView : BaseView(), RoomListener {
   }
 
   override fun onRoomClick(room: RoomModel) {
-    presenter.viewMeetConfDetails()
+    if(room.roomType == "Meeting") {
+      presenter.viewMeetDetails(room)
+    }else if(room.roomType == "Conf"){
+      presenter.viewConfDetails(room)
+    }
   }
 
   override fun showRooms(rooms: List<RoomModel>) {

@@ -11,9 +11,11 @@ import org.wit.deskrequest.models.Desk
 import org.wit.deskrequest.models.RoomModel
 import org.wit.deskrequest.views.booking.BookingView
 import org.wit.deskrequest.views.bookinglist.BookingListView
+import org.wit.deskrequest.views.conf.ConfView
 import org.wit.deskrequest.views.desk.DeskView
 import org.wit.deskrequest.views.desklist.DeskListView
 import org.wit.deskrequest.views.login.LoginView
+import org.wit.deskrequest.views.meet.MeetView
 import org.wit.deskrequest.views.meetconflist.MeetConfListView
 import org.wit.deskrequest.views.officelist.OfficeListView
 import org.wit.deskrequest.views.options.OptionsView
@@ -24,7 +26,7 @@ import org.wit.deskrequest.views.settings.SettingsView
 import org.wit.deskrequest.views.welcome.WelcomePresenter
 
 enum class VIEW {
-    WELCOME, OPTIONS, LIST, MEETCONF, OFFICE, DESK, DESKDETAILS, BOOKINGS, BOOKDETAILS, LOGIN, SETTINGS
+    WELCOME, OPTIONS, LIST, MEETCONF, MEETDETAILS, CONFDETAILS, OFFICE, DESK, DESKDETAILS, BOOKINGS, BOOKDETAILS, LOGIN, SETTINGS
 }
 
 open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
@@ -38,6 +40,8 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
             VIEW.OPTIONS -> intent = Intent(this, OptionsView::class.java)
             VIEW.LIST -> intent = Intent(this, RoomListView::class.java)
             VIEW.MEETCONF -> intent = Intent(this, MeetConfListView::class.java)
+            VIEW.MEETDETAILS -> intent = Intent(this, MeetView::class.java)
+            VIEW.CONFDETAILS -> intent = Intent(this, ConfView::class.java)
             VIEW.OFFICE -> intent = Intent(this, OfficeListView::class.java)
             VIEW.DESK -> intent = Intent(this, DeskListView::class.java)
             VIEW.DESKDETAILS -> intent = Intent(this, DeskView::class.java)
@@ -85,6 +89,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
     //}
 
     open fun showRooms(rooms: List<RoomModel>) {}
+    open fun showRoom(room: RoomModel){}
     open fun showDesks(desk: List<Desk>) {}
     open fun showDesk(desk: Desk) {}
     open fun showBookings(bookings: List<BookingModel>) {}
