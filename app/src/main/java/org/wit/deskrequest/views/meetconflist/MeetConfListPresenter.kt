@@ -13,11 +13,11 @@ import org.wit.deskrequest.views.VIEW
 class MeetConfListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
 
   fun viewMeetDetails(room: RoomModel) {
-    view?.navigateTo(VIEW.MEETDETAILS, 0, "rooms", room)
+    view?.navigateTo(VIEW.MEETDETAILS, 0, "room", room)
   }
 
   fun viewConfDetails(room: RoomModel) {
-    view?.navigateTo(VIEW.CONFDETAILS, 0, "rooms", room)
+    view?.navigateTo(VIEW.CONFDETAILS, 0, "room", room)
   }
 
   fun loadMeetConf() {

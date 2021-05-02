@@ -21,6 +21,7 @@ class ConfPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
   init {
     if (view.intent.hasExtra("room")) {
       room = view.intent.extras?.getParcelable<RoomModel>("room")!!
+      info("Room Details to Show: $room")
       view.showRoom(room)
     } else {
     }

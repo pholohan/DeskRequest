@@ -33,6 +33,19 @@ class MeetView : BaseView() {
 
     presenter = initPresenter(MeetPresenter(this)) as MeetPresenter
     //presenter.loadDesks()
+    val bottomNavigationView =
+        findViewById<View>(R.id.bottomNavSettings) as BottomNavigationView
+
+    bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+      when (item.itemId) {
+        R.id.item_book -> presenter.loadWelcome()
+        //R.id.item_room -> presenter.doShowHillfortsMap()
+        R.id.item_bookings -> presenter.loadBookings()
+        R.id.item_settings -> presenter.userSettings()
+        R.id.item_logout -> presenter.doLogout()
+      }
+      true
+    }
 
     duration_rg.setOnCheckedChangeListener(
         RadioGroup.OnCheckedChangeListener { group, checkedID ->
@@ -81,21 +94,6 @@ class MeetView : BaseView() {
       //presenter.doAddRoomBooking(deskNoField.text.toString().toLong(), duration)
       //presenter.doUpdateDeskBooked(true)
     }
-
-    val bottomNavigationView =
-        findViewById<View>(R.id.bottomNav) as BottomNavigationView
-
-    bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-      when (item.itemId) {
-        R.id.item_book -> presenter.loadWelcome()
-        //R.id.item_room -> presenter.doShowHillfortsMap()
-        R.id.item_bookings -> presenter.loadBookings()
-        R.id.item_settings -> presenter.userSettings()
-        R.id.item_logout -> presenter.doLogout()
-      }
-      true
-    }
-
   }
 
   override fun showRoom(room: RoomModel){
