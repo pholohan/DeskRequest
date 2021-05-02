@@ -8,6 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.AnkoLogger
 import org.wit.deskrequest.models.BookingModel
 import org.wit.deskrequest.models.Desk
+import org.wit.deskrequest.models.RoomBookingModel
 import org.wit.deskrequest.models.RoomModel
 import org.wit.deskrequest.views.booking.BookingView
 import org.wit.deskrequest.views.bookinglist.BookingListView
@@ -94,6 +95,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
     open fun showDesk(desk: Desk) {}
     open fun showBookings(bookings: List<BookingModel>) {}
     open fun showBooking(booking: BookingModel){}
+    open fun showRoomBooking(roombooking: RoomBookingModel){}
     open fun showProgress() {}
     open fun hideProgress() {}
 }

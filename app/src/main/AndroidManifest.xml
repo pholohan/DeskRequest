@@ -23,8 +23,14 @@
 
     <activity
         android:name=".views.booking.BookingView"
-        android:label="@string/title_activity_settings">
+        android:label="@string/title_activity_bookings">
     </activity>
+
+    <activity
+        android:name=".views.roombooking.RoomBookingView"
+        android:label="@string/title_activity_roombookings">
+    </activity>
+
 
     <activity
         android:name=".views.meet.MeetView"

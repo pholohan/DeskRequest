@@ -2,7 +2,9 @@ package org.wit.deskrequest.views.conf
 
 import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.info
+import org.jetbrains.anko.uiThread
 import org.wit.deskrequest.models.BookingModel
 import org.wit.deskrequest.models.Desk
 import org.wit.deskrequest.models.RoomBookingModel
@@ -11,6 +13,7 @@ import org.wit.deskrequest.views.BasePresenter
 import org.wit.deskrequest.views.BaseView
 import org.wit.deskrequest.views.VIEW
 import org.wit.deskrequest.views.welcome.WelcomeView
+import java.util.*
 
 class ConfPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
 
@@ -25,6 +28,24 @@ class ConfPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
       view.showRoom(room)
     } else {
     }
+  }
+
+  fun doAddRoomBooking(roomid: Long, roomname: String, roomtype: String, d_duration: String){
+    val unique_id = (Date().getTime() / 1000L % Int.MAX_VALUE) as Long
+    roombooking.rbookid = unique_id
+    roombooking.roomid = roomid
+    roombooking.roomname = roomname
+    roombooking.roomtype = roomtype
+    roombooking.d_date = date
+    roombooking.d_duration = d_duration
+    doAsync {
+      app.roombookings.create(roombooking)
+      //app.rooms.updateDeskBooked(desk)
+      uiThread {
+        view?.finish()
+      }
+    }
+
   }
 
   fun loadWelcome() {
