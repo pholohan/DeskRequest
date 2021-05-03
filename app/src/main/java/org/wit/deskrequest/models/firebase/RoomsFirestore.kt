@@ -62,20 +62,11 @@ class RoomsFirestore(val context: Context) : RoomStore, AnkoLogger {
     }
 
     override fun updateDeskBooked(desk : Desk) {
-        //var foundDesk: Desk? = desks.find { p -> p.deskid == desk.deskid }
         var foundDesk = desk
         if(foundDesk!=null){
-            foundDesk.deskid = desk.deskid
             foundDesk.deskbooked = true
-            foundDesk.chair.type = desk.chair.type
-            foundDesk.chair.size = desk.chair.size
-            foundDesk.computer.os = desk.computer.os
-            foundDesk.monitor.size = desk.monitor.resolution
-            foundDesk.dock.model = desk.dock.model
-            foundDesk.phone.phno = desk.phone.phno
-            foundDesk.phone.directdial = desk.phone.directdial
-            info("Sending to Desk $foundDesk")
         }
+        db.child("rooms").child("desk").child(desk.deskid.toString()).setValue(desk)
     }
 
 

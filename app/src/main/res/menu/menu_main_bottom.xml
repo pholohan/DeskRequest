@@ -8,7 +8,7 @@
       app:showAsAction="never"/>
 
   <item
-      android:id="@+id/item_room"
+      android:id="@+id/item_room_bookings"
       android:icon="@drawable/ic_baseline_meeting_room_24"
       android:title="@string/menu_room"
       android:tint="@color/colorText"
