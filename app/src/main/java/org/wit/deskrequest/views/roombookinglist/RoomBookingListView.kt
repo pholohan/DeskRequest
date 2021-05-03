@@ -1,4 +1,4 @@
-package org.wit.deskrequest.views.bookinglist
+package org.wit.deskrequest.views.roombookinglist
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,23 +8,26 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_room_list.*
 import org.wit.deskrequest.R
 import org.wit.deskrequest.models.BookingModel
+import org.wit.deskrequest.models.RoomBookingModel
 import org.wit.deskrequest.views.BaseView
+import org.wit.deskrequest.views.bookinglist.BookingListAdaptor
+import org.wit.deskrequest.views.bookinglist.BookingListPresenter
 
-class BookingListView: BaseView(), BookingListener {
+class RoomBookingListView: BaseView(), RoomBookingListener {
 
-  lateinit var presenter: BookingListPresenter
+  lateinit var presenter: RoomBookingListPresenter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_booking_list)
+    setContentView(R.layout.activity_roombooking_list)
 
     setSupportActionBar(toolbarList)
     super.init(toolbarList, true);
 
-    presenter = initPresenter(BookingListPresenter(this)) as BookingListPresenter
+    presenter = initPresenter(RoomBookingListPresenter(this)) as RoomBookingListPresenter
     val layoutManager = LinearLayoutManager(this)
     recyclerView.layoutManager = layoutManager
-    presenter.loadBookings()
+    presenter.loadRoomBookings()
 
     val bottomNavigationView =
         findViewById<View>(R.id.bottomNav) as BottomNavigationView
@@ -41,17 +44,17 @@ class BookingListView: BaseView(), BookingListener {
     }
   }
 
-  override fun onBookingClick(booking: BookingModel) {
-    presenter.viewBooking(booking)
+  override fun onRoomBookingClick(roombooking: RoomBookingModel) {
+    presenter.viewRoomBooking(roombooking)
   }
 
-  override fun showBookings(bookings: List<BookingModel>) {
-    recyclerView.adapter = BookingListAdaptor(bookings, this)
+  override fun showRoomBookings(roombookings: List<RoomBookingModel>) {
+    recyclerView.adapter = RoomBookingListAdaptor(roombookings, this)
     recyclerView.adapter?.notifyDataSetChanged()
   }
 
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-    presenter.loadBookings()
+    presenter.loadRoomBookings()
     super.onActivityResult(requestCode, resultCode, data)
   }
 }

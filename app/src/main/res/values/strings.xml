@@ -25,6 +25,7 @@
   <string name="activity_meet_details">Meeting Room Details</string>
   <string name="activity_bookings">Your Bookings</string>
   <string name="activity_settings">Settings</string>
+  <string name="activity_room_bookings">Your Room Bookings</string>
   <string name="button_book_desk">Book This Desk</string>
   <string name="button_book_room">Book This Room</string>
   <string name="hint_desknumber">Desk Number</string>
