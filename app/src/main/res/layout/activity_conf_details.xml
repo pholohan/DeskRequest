@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context="org.wit.deskrequest.views.desk.DeskView">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.0"
+      tools:layout_editor_absoluteX="-16dp">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true"
+        app:elevation="0dip"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+      <androidx.appcompat.widget.Toolbar
+          android:id="@+id/toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:titleTextColor="@color/colorText" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/appBarLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="-11dp">
+
+
+      <Button
+          android:id="@+id/bookConf"
+          android:layout_width="379dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="80dp"
+          android:layout_marginEnd="8dp"
+          android:background="@color/colorPrimaryDark"
+          android:paddingTop="8dp"
+          android:paddingBottom="8dp"
+          android:text="@string/button_book_room"
+          android:textColor="@color/colorText"
+          android:textSize="16sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/coffeeField" />
+
+      <TextView
+          android:id="@+id/confInfo"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="60dp"
+          android:autofillHints=""
+          android:gravity="center_horizontal"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="@string/activity_conf_details"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="25sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/confName"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="Room Name: "
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/confInfo" />
+
+      <TextView
+          android:id="@+id/confNameField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Display Room Name"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toEndOf="@id/confName"
+          app:layout_constraintTop_toBottomOf="@id/confInfo" />
+
+      <TextView
+          android:id="@+id/speakerType"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="Speaker Type: "
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/confName" />
+
+      <TextView
+          android:id="@+id/screenSize"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="Screen Size"
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toEndOf="@id/speakerType"
+          app:layout_constraintTop_toBottomOf="@id/confName" />
+
+      <TextView
+          android:id="@+id/speakerTypeField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Speaker Type"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/speakerType" />
+
+      <TextView
+          android:id="@+id/screenSizeField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Screen Size"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toEndOf="@id/speakerType"
+          app:layout_constraintTop_toBottomOf="@id/screenSize" />
+
+      <TextView
+          android:id="@+id/whiteboard"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="Whiteboard: "
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/speakerTypeField" />
+
+      <TextView
+          android:id="@+id/whiteboardField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Whiteboard"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toEndOf="@id/whiteboard"
+          app:layout_constraintTop_toBottomOf="@id/screenSizeField" />
+
+      <TextView
+          android:id="@+id/coffee"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:text="Coffee: "
+          android:textColor="@color/colorPrimaryDark"
+          android:textSize="20sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/whiteboard" />
+
+      <TextView
+          android:id="@+id/coffeeField"
+          android:layout_width="200dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="5dp"
+          android:autofillHints=""
+          android:hint="Coffee"
+          android:maxLength="25"
+          android:maxLines="1"
+          android:padding="8dp"
+          android:textColor="@color/colorBotNavText"
+          android:textSize="15sp"
+          app:layout_constraintStart_toEndOf="@id/coffee"
+          app:layout_constraintTop_toBottomOf="@id/whiteboardField" />
+
+
+
+      <RadioGroup android:id="@+id/duration_rg"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="8dp"
+          android:orientation="vertical"
+          android:textSize="15sp"
+          app:layout_constraintStart_toEndOf="@id/coffee"
+          app:layout_constraintTop_toBottomOf="@id/coffeeField">
+
+        <RadioButton
+            android:id="@+id/duration_am"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_am"
+            android:textSize="15sp" />
+        <RadioButton android:id="@+id/duration_pm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_pm"
+            android:textSize="15sp"/>
+      </RadioGroup>
+
+      <RadioGroup android:id="@+id/duration_rg2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="8dp"
+          android:orientation="vertical"
+          android:textSize="15sp"
+          app:layout_constraintTop_toBottomOf="@id/coffeeField">
+        <RadioButton
+            android:id="@+id/duration_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_full"
+            android:textSize="15sp"/>
+        <RadioButton android:id="@+id/duration_half"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_half"
+            android:textSize="15sp"/>
+      </RadioGroup>
+
+      <ImageView
+          android:id="@+id/deskrequestImage"
+          android:layout_width="0dp"
+          android:layout_height="100dp"
+          android:layout_marginStart="4dp"
+          android:layout_marginTop="32dp"
+          android:layout_marginEnd="5dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.503"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/bookConf"
+          app:srcCompat="@mipmap/ic_launcher" />
+
+      <com.google.android.material.bottomnavigation.BottomNavigationView
+          android:id="@+id/bottomNavSettings"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_gravity="bottom"
+          android:layout_marginStart="8dp"
+          android:layout_marginEnd="8dp"
+          android:background="@color/colorBotNav"
+          app:itemIconTint="@color/colorBotNavText"
+          app:itemTextColor="@color/colorBotNavText"
+          android:visibility="visible"
+          app:labelVisibilityMode="labeled"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:menu="@menu/menu_main_bottom"
+          tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

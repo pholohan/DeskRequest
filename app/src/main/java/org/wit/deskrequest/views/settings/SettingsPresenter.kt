@@ -33,6 +33,9 @@ class SettingsPresenter (view: BaseView) : BasePresenter(view) {
     view?.navigateTo(VIEW.WELCOME)
   }
 
+  fun userSettings(){
+    view?.navigateTo(VIEW.SETTINGS)
+  }
 
   fun loadBookings() {
     view?.navigateTo(VIEW.BOOKINGS)

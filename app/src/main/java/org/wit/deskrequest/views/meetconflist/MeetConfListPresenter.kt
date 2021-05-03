@@ -5,13 +5,19 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.info
 import org.jetbrains.anko.uiThread
+import org.wit.deskrequest.models.RoomModel
 import org.wit.deskrequest.views.BasePresenter
 import org.wit.deskrequest.views.BaseView
 import org.wit.deskrequest.views.VIEW
 
 class MeetConfListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
 
-  fun viewMeetConfDetails() {
+  fun viewMeetDetails(room: RoomModel) {
+    view?.navigateTo(VIEW.MEETDETAILS, 0, "room", room)
+  }
+
+  fun viewConfDetails(room: RoomModel) {
+    view?.navigateTo(VIEW.CONFDETAILS, 0, "room", room)
   }
 
   fun loadMeetConf() {

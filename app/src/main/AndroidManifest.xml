@@ -23,7 +23,29 @@
 
     <activity
         android:name=".views.booking.BookingView"
-        android:label="@string/title_activity_settings">
+        android:label="@string/title_activity_bookings">
+    </activity>
+
+    <activity
+        android:name=".views.roombooking.RoomBookingView"
+        android:label="@string/title_activity_roombookings">
+    </activity>
+
+
+    <activity
+        android:name=".views.meet.MeetView"
+        android:label="@string/title_activity_meet_details">
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".views.meetconflist.MeetConfListView" />
+    </activity>
+
+    <activity
+        android:name=".views.conf.ConfView"
+        android:label="@string/title_activity_conf_details">
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".views.meetconflist.MeetConfListView" />
     </activity>
 
      <activity

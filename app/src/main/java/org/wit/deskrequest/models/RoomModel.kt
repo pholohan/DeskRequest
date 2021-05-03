@@ -11,7 +11,14 @@ data class RoomModel(var roomid: Long = 0,
                      var location: String = "",
                      var capacity: String = "",
                      var desk: ArrayList<Desk>? = null,
-                     var roombooked: Boolean? = false): Parcelable
+                     var roombooked: Boolean? = false,
+                     var whiteboard: Boolean? = false,
+                     var projector: Boolean? = false,
+                     var desktop: Boolean? = false,
+                     var laptop: Boolean? = false,
+                     var speakertype: String? = "",
+                     var screensize: String? ="",
+                     var coffee: Boolean? = false): Parcelable
 
 @Parcelize
 data class Desk(var deskid: Long = 0,
@@ -42,5 +49,4 @@ data class Dock(var dockid: Long = 0,
 @Parcelize
 data class Phone(var phno: Long = 0,
                  var directdial: Boolean? = false):Parcelable
-
 
