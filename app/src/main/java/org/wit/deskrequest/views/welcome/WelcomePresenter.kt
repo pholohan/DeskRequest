@@ -14,6 +14,11 @@ class WelcomePresenter (view: BaseView) : BasePresenter(view)  {
   fun loadBookings() {
     view?.navigateTo(VIEW.BOOKINGS)
   }
+
+  fun loadRoomBookings() {
+    view?.navigateTo(VIEW.ROOMBOOKINGS)
+  }
+
   fun loadWelcome() {
     view?.navigateTo(VIEW.WELCOME)
   }

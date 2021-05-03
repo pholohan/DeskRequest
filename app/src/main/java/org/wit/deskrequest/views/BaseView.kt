@@ -20,6 +20,7 @@ import org.wit.deskrequest.views.meet.MeetView
 import org.wit.deskrequest.views.meetconflist.MeetConfListView
 import org.wit.deskrequest.views.officelist.OfficeListView
 import org.wit.deskrequest.views.options.OptionsView
+import org.wit.deskrequest.views.roombooking.RoomBookingView
 import org.wit.deskrequest.views.roomlist.RoomListPresenter
 import org.wit.deskrequest.views.welcome.WelcomeView
 import org.wit.deskrequest.views.roomlist.RoomListView
@@ -27,7 +28,7 @@ import org.wit.deskrequest.views.settings.SettingsView
 import org.wit.deskrequest.views.welcome.WelcomePresenter
 
 enum class VIEW {
-    WELCOME, OPTIONS, LIST, MEETCONF, MEETDETAILS, CONFDETAILS, OFFICE, DESK, DESKDETAILS, BOOKINGS, BOOKDETAILS, LOGIN, SETTINGS
+    WELCOME, OPTIONS, LIST, MEETCONF, MEETDETAILS, CONFDETAILS, OFFICE, DESK, DESKDETAILS, BOOKINGS, ROOMBOOKINGS, BOOKDETAILS, ROOMBOOKDETAILS, LOGIN, SETTINGS
 }
 
 open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
@@ -47,7 +48,9 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
             VIEW.DESK -> intent = Intent(this, DeskListView::class.java)
             VIEW.DESKDETAILS -> intent = Intent(this, DeskView::class.java)
             VIEW.BOOKINGS -> intent = Intent(this, BookingListView::class.java)
+            VIEW.ROOMBOOKINGS -> intent = Intent(this, BookingListView::class.java)
             VIEW.BOOKDETAILS -> intent = Intent(this, BookingView::class.java)
+            VIEW.ROOMBOOKDETAILS -> intent = Intent(this, RoomBookingView::class.java)
             VIEW.LOGIN -> intent = Intent(this, LoginView::class.java)
             VIEW.SETTINGS -> intent = Intent(this, SettingsView::class.java)
         }
