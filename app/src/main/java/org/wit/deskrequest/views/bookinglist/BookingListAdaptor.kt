@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.card_room.view.*
 import org.wit.deskrequest.R
 import org.wit.deskrequest.models.BookingModel
 import org.wit.deskrequest.models.Desk
+import org.wit.deskrequest.models.RoomBookingModel
 import org.wit.deskrequest.models.RoomModel
 
 interface BookingListener {

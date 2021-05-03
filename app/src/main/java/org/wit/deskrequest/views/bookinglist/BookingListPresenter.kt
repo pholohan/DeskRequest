@@ -30,6 +30,10 @@ class BookingListPresenter(view: BaseView): BasePresenter(view), AnkoLogger {
     view?.navigateTo(VIEW.WELCOME)
   }
 
+  fun loadRoomBookings() {
+    view?.navigateTo(VIEW.ROOMBOOKINGS)
+  }
+
   fun userSettings(){
     view?.navigateTo(VIEW.SETTINGS)
   }

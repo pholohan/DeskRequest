@@ -1,31 +1,28 @@
-package org.wit.deskrequest.views.meetconflist
+package org.wit.deskrequest.views.roombookinglist
 
 import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.info
 import org.jetbrains.anko.uiThread
-import org.wit.deskrequest.models.RoomModel
+import org.wit.deskrequest.models.BookingModel
+import org.wit.deskrequest.models.RoomBookingModel
 import org.wit.deskrequest.views.BasePresenter
 import org.wit.deskrequest.views.BaseView
 import org.wit.deskrequest.views.VIEW
 
-class MeetConfListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
+class RoomBookingListPresenter(view: BaseView): BasePresenter(view), AnkoLogger {
 
-  fun viewMeetDetails(room: RoomModel) {
-    view?.navigateTo(VIEW.MEETDETAILS, 0, "room", room)
+  fun viewRoomBooking(roombooking: RoomBookingModel){
+    view?.navigateTo(VIEW.ROOMBOOKDETAILS, 0, "roombooking", roombooking)
   }
 
-  fun viewConfDetails(room: RoomModel) {
-    view?.navigateTo(VIEW.CONFDETAILS, 0, "room", room)
-  }
-
-  fun loadMeetConf() {
+  fun loadRoomBookings() {
     doAsync {
-      val rooms = app.rooms.filterMeetConf()
-      info("Rooms: $rooms")
+      val roombookings = app.roombookings.findAll()
+      info("Room Bookings: $roombookings")
       uiThread {
-        view?.showRooms(rooms)
+        view?.showRoomBookings(roombookings)
       }
     }
   }
@@ -38,17 +35,13 @@ class MeetConfListPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
     view?.navigateTo(VIEW.BOOKINGS)
   }
 
-  fun loadRoomBookings() {
-    view?.navigateTo(VIEW.ROOMBOOKINGS)
-  }
-
   fun userSettings(){
     view?.navigateTo(VIEW.SETTINGS)
   }
 
   fun doLogout() {
     FirebaseAuth.getInstance().signOut()
-    //app.bookings.clear()
+    app.bookings.clear()
     view?.navigateTo(VIEW.LOGIN)
   }
 }

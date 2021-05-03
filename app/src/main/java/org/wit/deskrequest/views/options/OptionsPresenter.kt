@@ -28,6 +28,10 @@ class OptionsPresenter(view: BaseView) : BasePresenter(view){
     view?.navigateTo(VIEW.BOOKINGS)
   }
 
+  fun loadRoomBookings() {
+    view?.navigateTo(VIEW.ROOMBOOKINGS)
+  }
+
   fun userSettings(){
     view?.navigateTo(VIEW.SETTINGS)
   }

@@ -22,7 +22,7 @@ class RoomBookingsFirestore(val context: Context) : RoomBookingStore, AnkoLogger
   override fun create(roombooking: RoomBookingModel) {
     db = FirebaseDatabase.getInstance().reference
     userId = FirebaseAuth.getInstance().currentUser!!.uid
-    val key = db.child("users").child(userId).child("bookings").push().key
+    val key = db.child("users").child(userId).child("roombookings").push().key
     key?.let {
       roombooking.fbid = key
       roombookings.add(roombooking)
@@ -48,7 +48,8 @@ class RoomBookingsFirestore(val context: Context) : RoomBookingStore, AnkoLogger
     roombookings.clear()
   }
 
-  fun fetchBookings(roombookingsReady: () -> Unit) {
+  fun fetchRoomBookings(roombookingsReady: () -> Unit) {
+    info("Fetching Room Bookings")
     val valueEventListener = object : ValueEventListener {
       override fun onCancelled(dataSnapshot: DatabaseError) {
       }
