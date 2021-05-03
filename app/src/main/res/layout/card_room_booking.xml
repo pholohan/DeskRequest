@@ -30,7 +30,7 @@
         android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/roomName"
+        android:id="@+id/roombookName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
@@ -38,28 +38,28 @@
         android:layout_below="@id/rbookid" />
 
     <TextView
-        android:id="@+id/roomType"
+        android:id="@+id/roombookType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
         android:layout_toEndOf="@+id/imageIcon"
-        android:layout_below="@id/roomName" />
+        android:layout_below="@id/roombookName" />
 
     <TextView
-        android:id="@+id/d_date"
+        android:id="@+id/room_d_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
         android:layout_toEndOf="@+id/imageIcon"
-        android:layout_below="@id/roomType"/>
+        android:layout_below="@id/roombookType"/>
 
     <TextView
-        android:id="@+id/d_duration"
+        android:id="@+id/room_d_duration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
         android:layout_toEndOf="@+id/imageIcon"
-        android:layout_below="@id/d_date"/>
+        android:layout_below="@id/room_d_date"/>
 
   </RelativeLayout>
 </androidx.cardview.widget.CardView>

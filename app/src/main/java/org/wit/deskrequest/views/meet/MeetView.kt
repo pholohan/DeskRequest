@@ -91,7 +91,7 @@ class MeetView : BaseView() {
             Toast.LENGTH_SHORT).show()
       }
       duration = full_day_duration +" "+ half_day_duration
-      presenter.doAddRoomBooking(room.roomid, room.roomName, room.roomType, duration)
+      presenter.doAddRoomBooking(duration)
       //presenter.doUpdateDeskBooked(true)
     }
   }

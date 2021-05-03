@@ -26,12 +26,12 @@ class MeetPresenter(view: BaseView) : BasePresenter(view), AnkoLogger {
     }
   }
 
-  fun doAddRoomBooking(roomid: Long, roomname: String, roomtype: String, d_duration: String){
+  fun doAddRoomBooking(d_duration: String){
     val unique_id = (Date().getTime() / 1000L % Int.MAX_VALUE) as Long
     roombooking.rbookid = unique_id
-    roombooking.roomid = roomid
-    roombooking.roomname = roomname
-    roombooking.roomtype = roomtype
+    roombooking.roomid = room.roomid
+    roombooking.roomname = room.roomName
+    roombooking.roomtype = room.roomType
     roombooking.d_date = date
     roombooking.d_duration = d_duration
     doAsync {

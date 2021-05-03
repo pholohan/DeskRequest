@@ -98,6 +98,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
     open fun showDesk(desk: Desk) {}
     open fun showBookings(bookings: List<BookingModel>) {}
     open fun showBooking(booking: BookingModel){}
+    open fun showRoomBookings(roombookings: List<RoomBookingModel>) {}
     open fun showRoomBooking(roombooking: RoomBookingModel){}
     open fun showProgress() {}
     open fun hideProgress() {}

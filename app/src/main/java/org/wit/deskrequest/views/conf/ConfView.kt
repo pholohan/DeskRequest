@@ -27,7 +27,6 @@ class ConfView: BaseView() {
     super.init(toolbar, true);
 
     presenter = initPresenter(ConfPresenter(this)) as ConfPresenter
-    //presenter.loadDesks()
     val bottomNavigationView =
         findViewById<View>(R.id.bottomNavSettings) as BottomNavigationView
 
@@ -86,7 +85,7 @@ class ConfView: BaseView() {
             Toast.LENGTH_SHORT).show()
       }
       duration = full_day_duration +" "+ half_day_duration
-      presenter.doAddRoomBooking(room.roomid, room.roomName, room.roomType, duration)
+      presenter.doAddRoomBooking(duration)
       //presenter.doUpdateDeskBooked(true)
     }
 
