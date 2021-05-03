@@ -21,6 +21,7 @@ import org.wit.deskrequest.views.meetconflist.MeetConfListView
 import org.wit.deskrequest.views.officelist.OfficeListView
 import org.wit.deskrequest.views.options.OptionsView
 import org.wit.deskrequest.views.roombooking.RoomBookingView
+import org.wit.deskrequest.views.roombookinglist.RoomBookingListView
 import org.wit.deskrequest.views.roomlist.RoomListPresenter
 import org.wit.deskrequest.views.welcome.WelcomeView
 import org.wit.deskrequest.views.roomlist.RoomListView
@@ -48,7 +49,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
             VIEW.DESK -> intent = Intent(this, DeskListView::class.java)
             VIEW.DESKDETAILS -> intent = Intent(this, DeskView::class.java)
             VIEW.BOOKINGS -> intent = Intent(this, BookingListView::class.java)
-            VIEW.ROOMBOOKINGS -> intent = Intent(this, BookingListView::class.java)
+            VIEW.ROOMBOOKINGS -> intent = Intent(this, RoomBookingListView::class.java)
             VIEW.BOOKDETAILS -> intent = Intent(this, BookingView::class.java)
             VIEW.ROOMBOOKDETAILS -> intent = Intent(this, RoomBookingView::class.java)
             VIEW.LOGIN -> intent = Intent(this, LoginView::class.java)

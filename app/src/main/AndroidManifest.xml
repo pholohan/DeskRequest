@@ -101,6 +101,14 @@
           android:name="android.support.PARENT_ACTIVITY"
           android:value=".views.officelist.OfficeListView" />
     </activity>
+
+    <activity
+        android:name=".views.roombookinglist.RoomBookingListView"
+        android:label="@string/activity_room_bookings">
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".views.officelist.OfficeListView" />
+    </activity>
     <activity android:name=".activities.SplashActivity" >
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
