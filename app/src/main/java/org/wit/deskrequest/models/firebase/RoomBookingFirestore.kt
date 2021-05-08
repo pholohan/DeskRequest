@@ -20,11 +20,14 @@ class RoomBookingsFirestore(val context: Context) : RoomBookingStore, AnkoLogger
   }
 
   override fun create(roombooking: RoomBookingModel) {
+    var userEmail: String?
     db = FirebaseDatabase.getInstance().reference
     userId = FirebaseAuth.getInstance().currentUser!!.uid
+    userEmail = FirebaseAuth.getInstance().currentUser!!.email
     val key = db.child("users").child(userId).child("roombookings").push().key
     key?.let {
       roombooking.fbid = key
+      roombooking.email = userEmail!!
       roombookings.add(roombooking)
       db.child("users").child(userId).child("roombookings").child(key).setValue(roombooking)
     }

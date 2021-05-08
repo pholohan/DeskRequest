@@ -30,11 +30,14 @@ class BookingsFirestore(val context: Context) : BookingStore, AnkoLogger {
     }
 
     override fun create(booking: BookingModel) {
+        var userEmail: String?
         db = FirebaseDatabase.getInstance().reference
         userId = FirebaseAuth.getInstance().currentUser!!.uid
+        userEmail = FirebaseAuth.getInstance().currentUser!!.email
         val key = db.child("users").child(userId).child("bookings").push().key
         key?.let {
             booking.fbid = key
+            booking.email = userEmail!!
             bookings.add(booking)
             db.child("users").child(userId).child("bookings").child(key).setValue(booking)
         }
