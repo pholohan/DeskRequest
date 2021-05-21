@@ -40,8 +40,9 @@ class DeskAdapter constructor(
   class MainHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(desk: Desk, listener: DeskListener) {
-      itemView.deskID.text = ("Desk ID:" + desk.deskid.toString())
-      itemView.deskBooked.text = ("Booked:" + desk.deskbooked.toString())
+      itemView.deskID.text = ("Desk: " + desk.deskid.toString())
+      itemView.chairSize.text = ("Chair Size: " + desk.chair.size)
+      itemView.phNo.text = ("Phone Number: " + desk.phone.phno)
       itemView.setOnClickListener {
         listener.onDeskClick(desk)
       }
