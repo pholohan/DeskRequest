@@ -24,11 +24,17 @@
     <activity
         android:name=".views.booking.BookingView"
         android:label="@string/title_activity_bookings">
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".views.bookinglist.BookingListView" />
     </activity>
 
     <activity
         android:name=".views.roombooking.RoomBookingView"
         android:label="@string/title_activity_roombookings">
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".views.roombookinglist.RoomBookingListView" />
     </activity>
 
 
